@@ -1,0 +1,716 @@
+{
+  "GetReward_HomePage": {
+    "next": [
+      "GetReward_HomePageHub",
+      "GetReward_HomePageHub1",
+      "GetReward_HomePageHub2"
+    ]
+  },
+  "GetReward_HomePageHub": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "next": [
+      "GetReward_EnterUnion",
+      "GetReward_HomePageHub",
+      "GetReward_HomePageHub1"
+    ],
+    "post_delay": 2000,
+    "focus": "G=0.页面预期内，普通启动",
+    "roi": [
+      1047,
+      516,
+      107,
+      110
+    ],
+    "template": [
+      "Run.png"
+    ],
+    "green_mask": true,
+    "target": [
+      1186,
+      46,
+      0,
+      0
+    ],
+    "doc": "找到run-点击返回主页"
+  },
+  "GetReward_HomePageHub1": {
+    "recognition": "TemplateMatch",
+    "next": [
+      "GetReward_EnterUnion",
+      "GetReward_HomePageHub",
+      "GetReward_HomePageHub1"
+    ],
+    "post_delay": 2000,
+    "focus": "G=0.页面预期内，普通启动。BM.箱庭地图pin已确认",
+    "roi": [
+      1108,
+      637,
+      65,
+      57
+    ],
+    "template": [
+      "pin.png"
+    ]
+  },
+  "GetReward_HomePageHub2": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "next": [
+      "GetReward_HomePageHub",
+      "GetReward_HomePageHub1",
+      "GetReward_HomePageHub2"
+    ],
+    "post_delay": 2000,
+    "focus": "G=1.页面非预期，点击返回按钮",
+    "roi": [
+      1,
+      1,
+      231,
+      124
+    ],
+    "template": [
+      "BackButGe.png",
+      "BackButGe2.png"
+    ],
+    "green_mask": true,
+    "replace": [],
+    "doc": "其他页面，返回按钮"
+  },
+  "GetReward_BackHomePage": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "next": [
+      "GetReward_EnterUnion"
+    ],
+    "roi": [
+      1122,
+      646,
+      40,
+      38
+    ],
+    "template": [
+      "pin.png"
+    ],
+    "target": [
+      1186,
+      46,
+      0,
+      0
+    ],
+    "doc": "找到图钉-点击返回主页-（废弃）"
+  },
+  "GetReward_EnterUnion": {
+    "recognition": "OCR",
+    "next": [
+      "GetReward_UnionGUI"
+    ],
+    "post_delay": 1000,
+    "focus": "GM.公会签到",
+    "roi": [
+      256,
+      84,
+      100,
+      111
+    ],
+    "expected": [
+      "公会"
+    ],
+    "doc": "点击工会"
+  },
+  "GetReward_UnionGUI": {
+    "action": "Click",
+    "next": [
+      "GetReward_UnionBack"
+    ],
+    "post_delay": 3000,
+    "roi": [
+      622,
+      300,
+      34,
+      32
+    ],
+    "template": [
+      "UnionReward.png"
+    ],
+    "target": [
+      305,
+      120,
+      0,
+      0
+    ],
+    "doc": "工会签到"
+  },
+  "GetReward_UnionBack": {
+    "action": "Click",
+    "next": [
+      "GetReward_UnionBack2"
+    ],
+    "post_delay": 3000,
+    "roi": [
+      219,
+      21,
+      65,
+      41
+    ],
+    "expected": [
+      "公会"
+    ],
+    "target": [
+      60,
+      360,
+      0,
+      0
+    ],
+    "doc": "工会返回主页"
+  },
+  "GetReward_UnionBack2": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "GetReward_BusinReward",
+      "GetReward_UnionBack2"
+    ],
+    "post_delay": 3000,
+    "roi": [
+      180,
+      6,
+      151,
+      65
+    ],
+    "expected": [
+      "公会"
+    ],
+    "target": [
+      120,
+      35,
+      0,
+      0
+    ],
+    "doc": "工会返回主页"
+  },
+  "GetReward_BusinReward": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "GetReward_GetBusinReward"
+    ],
+    "on_error": [
+      "GetReward_DailyReward"
+    ],
+    "post_delay": 1000,
+    "focus": "GM.餐馆结算",
+    "roi": [
+      85,
+      228,
+      98,
+      34
+    ],
+    "expected": [
+      "餐馆"
+    ],
+    "doc": "识别点击餐馆"
+  },
+  "GetReward_GetBusinReward": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "GetReward_GetBusinRewardBack"
+    ],
+    "post_delay": 2000,
+    "roi": [
+      551,
+      478,
+      163,
+      126
+    ],
+    "expected": [
+      "结算"
+    ],
+    "doc": "点击结算"
+  },
+  "GetReward_GetBusinRewardBack": {
+    "action": "Click",
+    "next": [
+      "GetReward_Busin_In"
+    ],
+    "interrupt": [
+      "GetReward_ClickOnce"
+    ],
+    "on_error": [
+      "GetReward_GetDailyReward"
+    ],
+    "post_delay": 3000,
+    "roi": [
+      534,
+      622,
+      219,
+      40
+    ],
+    "target": [
+      45,
+      563,
+      0,
+      0
+    ],
+    "doc": "点击领取全部返回"
+  },
+  "GetReward_Busin_In": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "GetReward_Busin_InBusin"
+    ],
+    "focus": "GM.餐馆常客属性石",
+    "roi": [
+      72,
+      179,
+      122,
+      96
+    ],
+    "expected": [
+      "餐馆"
+    ],
+    "doc": "流程：进入餐馆。领取每日常客水晶。"
+  },
+  "GetReward_Busin_InBusin": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "GetReward_Busin_GiftGet"
+    ],
+    "post_delay": 8000,
+    "roi": [
+      583,
+      203,
+      143,
+      36
+    ],
+    "expected": [
+      "立刻前往餐厅"
+    ],
+    "doc": "餐馆结算页，进入餐馆"
+  },
+  "GetReward_Busin_GiftGet": {
+    "action": "Click",
+    "next": [
+      "GetReward_Busin_BackPVEPage"
+    ],
+    "post_delay": 3000,
+    "target": [
+      135,
+      220,
+      0,
+      0
+    ],
+    "doc": "直接点击常客位置，获取水晶。不设置判定。"
+  },
+  "GetReward_Busin_Back": {
+    "action": "Click",
+    "next": [
+      "GetReward_Busin_ChapterMenu"
+    ],
+    "post_delay": 5000,
+    "focus": "GM.离开餐馆卡带",
+    "target": [
+      1180,
+      45,
+      0,
+      0
+    ],
+    "doc": "返回主页面，之后流程结束。(废弃，入口已删除。暂留存观察）"
+  },
+  "GetReward_Busin_ChapterMenu": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "GetReward_Busin_ToPvp"
+    ],
+    "post_delay": 3000,
+    "post_wait_freezes": 1000,
+    "focus": "GM.主页面",
+    "roi": [
+      98,
+      656,
+      66,
+      32
+    ],
+    "expected": [
+      "抽抽乐"
+    ],
+    "target": [
+      1111,
+      650,
+      0,
+      0
+    ]
+  },
+  "GetReward_Busin_ToPvp": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "GetReward_Busin_BackHomePage"
+    ],
+    "post_delay": 6000,
+    "focus": "GM.进入PVP卡带",
+    "roi": [
+      75,
+      315,
+      259,
+      202
+    ],
+    "expected": [
+      "PvP"
+    ],
+    "target_offset": [
+      -10,
+      -100,
+      0,
+      0
+    ]
+  },
+  "GetReward_Busin_BackHomePage": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "next": [
+      "GetReward_DailyReward",
+      "GetReward_Busin_BackHomePage"
+    ],
+    "post_delay": 1000,
+    "focus": "GM.卡带复位成功",
+    "roi": [
+      1122,
+      646,
+      40,
+      38
+    ],
+    "template": [
+      "pin.png"
+    ],
+    "target": [
+      1186,
+      46,
+      0,
+      0
+    ],
+    "doc": "找到图钉-点击返回主页"
+  },
+  "GetReward_DailyReward": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "GetReward_GetDailyReward"
+    ],
+    "post_delay": 1000,
+    "focus": "GM.‘任务’奖励领取",
+    "roi": [
+      520,
+      658,
+      52,
+      32
+    ],
+    "expected": [
+      "任务"
+    ],
+    "target_offset": [
+      4,
+      -4,
+      0,
+      0
+    ],
+    "doc": "识别点击任务"
+  },
+  "GetReward_GetDailyReward": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "next": [
+      "GetReward_GetDailyRewardBack"
+    ],
+    "on_error": [
+      "GetReward_TabWeeklyReward"
+    ],
+    "post_delay": 3000,
+    "roi": [
+      1022,
+      640,
+      138,
+      38
+    ],
+    "template": [
+      "dailyreward.png"
+    ],
+    "threshold": 0.99,
+    "doc": "点击领取全部"
+  },
+  "GetReward_GetDailyRewardBack": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "GetReward_TabWeeklyReward"
+    ],
+    "post_delay": 3000,
+    "roi": [
+      558,
+      630,
+      147,
+      34
+    ],
+    "expected": [
+      "点击画面即可返回"
+    ],
+    "doc": "点击领取全部返回"
+  },
+  "GetReward_TabWeeklyReward": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "GetReward_GetWeeklyReward"
+    ],
+    "roi": [
+      180,
+      154,
+      149,
+      44
+    ],
+    "expected": [
+      "每周任务"
+    ]
+  },
+  "GetReward_GetWeeklyReward": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "next": [
+      "GetReward_GetWeeklyRewardBack",
+      "GetReward_BackHomePage2"
+    ],
+    "post_delay": 3000,
+    "roi": [
+      1022,
+      640,
+      138,
+      38
+    ],
+    "template": [
+      "dailyreward.png"
+    ],
+    "threshold": 0.99,
+    "doc": "点击领取全部"
+  },
+  "GetReward_GetWeeklyRewardBack": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "GetReward_BackHomePage2"
+    ],
+    "post_delay": 3000,
+    "roi": [
+      558,
+      630,
+      147,
+      34
+    ],
+    "expected": [
+      "点击画面即可返回"
+    ],
+    "doc": "点击领取全部返回"
+  },
+  "GetReward_BackHomePage2": {
+    "action": "Click",
+    "next": [
+      "GetReward_FinGetReward"
+    ],
+    "post_delay": 3000,
+    "roi": [
+      215,
+      19,
+      122,
+      42
+    ],
+    "target": [
+      120,
+      35,
+      0,
+      0
+    ],
+    "doc": "点击领取全部返回"
+  },
+  "GetReward_FinGetReward": {
+    "recognition": "OCR",
+    "next": [
+      "GetReward_BackMapPage"
+    ],
+    "focus": "GM.‘任务’返回主页面",
+    "roi": [
+      98,
+      656,
+      66,
+      32
+    ],
+    "expected": [
+      "抽抽乐"
+    ],
+    "doc": "识别左下抽抽乐"
+  },
+  "GetReward_BackMapPage": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "GetReward_FinBackMapPage"
+    ],
+    "roi": [
+      98,
+      656,
+      66,
+      32
+    ],
+    "expected": [
+      "抽抽乐"
+    ],
+    "target": [
+      135,
+      40,
+      0,
+      0
+    ],
+    "doc": "识别左下抽抽乐-返回地图页"
+  },
+  "GetReward_FinBackMapPage": {
+    "recognition": "TemplateMatch",
+    "next": [],
+    "roi": [
+      1122,
+      646,
+      40,
+      38
+    ],
+    "template": [
+      "pin.png"
+    ],
+    "doc": "识别右下图钉-章节主页"
+  },
+  "GetReward_ClickOnce": {
+    "action": "Click",
+    "focus": "GM.流程结束~",
+    "target": [
+      60,
+      360,
+      0,
+      0
+    ]
+  },
+  "GetReward_Busin_BackPVEPage": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "GetReward_Busin_BackHomePage2",
+      "GetReward_Busin_BackPVEPage"
+    ],
+    "focus": "PM.开始离开GetReward卡带",
+    "roi": [
+      91,
+      633,
+      197,
+      81
+    ],
+    "expected": [
+      "员工"
+    ],
+    "target": [
+      1186,
+      46,
+      0,
+      0
+    ],
+    "doc": "找到图钉-点击返回主页"
+  },
+  "GetReward_Busin_BackHomePage2": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "GetReward_Busin_PVEBookSwipe",
+      "GetReward_Busin_BackHomePage2"
+    ],
+    "roi": [
+      89,
+      655,
+      77,
+      37
+    ],
+    "expected": [
+      "抽抽乐"
+    ],
+    "target": [
+      1111,
+      650,
+      0,
+      0
+    ],
+    "doc": "识别左下抽抽乐-主页-点击选择章节"
+  },
+  "GetReward_Busin_PVEBookSwipe": {
+    "recognition": "OCR",
+    "action": "Swipe",
+    "next": [
+      "GetReward_Busin_TouchPVEBook"
+    ],
+    "roi": [
+      118,
+      505,
+      95,
+      42
+    ],
+    "expected": [
+      "活动游戏卡"
+    ],
+    "begin": [
+      1400,
+      300,
+      0,
+      0
+    ],
+    "end": [
+      1400,
+      700,
+      0,
+      0
+    ],
+    "doc": "识别活动游戏卡-上划"
+  },
+  "GetReward_Busin_TouchPVEBook": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "next": [
+      "GetReward_Busin_FinBackMapPage",
+      "GetReward_Busin_TouchPVEBook"
+    ],
+    "post_delay": 5000,
+    "focus": "PM.复位用卡带已找到",
+    "roi": [
+      405,
+      157,
+      78,
+      38
+    ],
+    "template": [
+      "pve2.png"
+    ],
+    "doc": "点击PVE本子2"
+  },
+  "GetReward_Busin_FinBackMapPage": {
+    "recognition": "TemplateMatch",
+    "next": [
+      "GetReward_Busin_BackHomePage"
+    ],
+    "focus": "PM.GetReward复位完成，结束~",
+    "roi": [
+      1122,
+      646,
+      40,
+      38
+    ],
+    "template": [
+      "pin.png"
+    ],
+    "doc": "识别右下图钉-章节主页"
+  }
+}

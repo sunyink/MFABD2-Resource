@@ -1,0 +1,698 @@
+{
+  "Equip_HomePage": {
+    "next": [
+      "Equip_HomePageHub",
+      "Equip_HomePageHub1",
+      "Equip_HomePageHub2"
+    ],
+    "focus": "EM.锻造开始"
+  },
+  "Equip_HomePageHub": {
+    "recognition": "TemplateMatch",
+    "next": [
+      "Equip_Skill4"
+    ],
+    "post_delay": 2000,
+    "focus": "G=0.页面预期内，普通启动。BM.箱庭地图run已确认",
+    "roi": [
+      1047,
+      516,
+      107,
+      110
+    ],
+    "template": [
+      "Run.png"
+    ]
+  },
+  "Equip_HomePageHub1": {
+    "recognition": "TemplateMatch",
+    "next": [
+      "Equip_Skill4"
+    ],
+    "post_delay": 2000,
+    "focus": "G=0.页面预期内，普通启动。BM.箱庭地图pin已确认",
+    "roi": [
+      1108,
+      637,
+      65,
+      57
+    ],
+    "template": [
+      "pin.png"
+    ]
+  },
+  "Equip_HomePageHub2": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "next": [
+      "Equip_HomePageHub",
+      "Equip_HomePageHub1",
+      "Equip_HomePageHub2"
+    ],
+    "post_delay": 2000,
+    "focus": "G=1.页面非预期，点击返回按钮",
+    "roi": [
+      1,
+      1,
+      231,
+      124
+    ],
+    "template": [
+      "BackButGe.png",
+      "BackButGe2.png"
+    ],
+    "green_mask": true,
+    "replace": [],
+    "doc": "其他页面，返回按钮"
+  },
+  "Equip_Skill4": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "next": [
+      "Equip_EquipMakeGui",
+      "Equip_Skill4"
+    ],
+    "post_delay": 2000,
+    "roi": [
+      1122,
+      646,
+      40,
+      38
+    ],
+    "template": [
+      "pin.png"
+    ],
+    "target": [
+      1097,
+      442,
+      0,
+      0
+    ],
+    "doc": "PVE点击技能4"
+  },
+  "Equip_EquipMakeGui": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "Equip_EquipSelect",
+      "Equip_EquipMakeGui"
+    ],
+    "post_delay": 1000,
+    "post_wait_freezes": 1000,
+    "focus": "EM.装备制作.开始",
+    "roi": [
+      1018,
+      641,
+      128,
+      37
+    ],
+    "expected": [
+      "立刻前往装备"
+    ],
+    "target": [
+      757,
+      36,
+      0,
+      0
+    ],
+    "doc": "制作装备界面，下滑"
+  },
+  "Equip_EquipSelect": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "next": [
+      "Equip_EquipMake",
+      "Equip_EquipSelect"
+    ],
+    "post_delay": 1000,
+    "post_wait_freezes": 1000,
+    "focus": "EM.装备制作.决定选垃圾",
+    "roi": [
+      602,
+      558,
+      51,
+      55
+    ],
+    "template": [
+      "jian.png"
+    ],
+    "doc": "点击筛选武器"
+  },
+  "Equip_EquipMake": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "Equip_EquipMakeClose",
+      "Equip_EquipMake"
+    ],
+    "post_delay": 5000,
+    "post_wait_freezes": 1000,
+    "focus": "EM.装备制作.敲敲敲~",
+    "roi": [
+      943,
+      600,
+      149,
+      120
+    ],
+    "expected": [
+      "制作"
+    ],
+    "doc": "制作装备界面，点击制作"
+  },
+  "Equip_EquipMakeClose": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "next": [
+      "Equip_EquipMakeBack",
+      "Equip_EquipMakeClose"
+    ],
+    "post_delay": 1000,
+    "post_wait_freezes": 1000,
+    "focus": "EM.装备制作.完毕页面x找到",
+    "roi": [
+      995,
+      174,
+      25,
+      27
+    ],
+    "template": [
+      "equipclose.png"
+    ],
+    "doc": "制作完成，点击X"
+  },
+  "Equip_EquipMakeBack": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "Equip_ToEquipGui"
+    ],
+    "post_delay": 1000,
+    "focus": "EM.装备制作.返回",
+    "roi": [
+      943,
+      600,
+      149,
+      120
+    ],
+    "expected": [
+      "制作"
+    ],
+    "target": [
+      116,
+      40,
+      0,
+      0
+    ],
+    "doc": "制作装备界面，左上返回"
+  },
+  "Equip_ToEquipGui": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "Equip_EquipGui",
+      "Equip_ToEquipGui"
+    ],
+    "post_delay": 1500,
+    "focus": "EM.前往武器库存",
+    "roi": [
+      1019,
+      647,
+      124,
+      31
+    ],
+    "expected": [
+      "立刻前往装备"
+    ],
+    "doc": "前往装备界面"
+  },
+  "Equip_EquipGui": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "Equip_EquipUp",
+      "Equip_EquipGui"
+    ],
+    "post_delay": 1000,
+    "post_wait_freezes": 1000,
+    "focus": "EM.装备强化",
+    "roi": [
+      880,
+      645,
+      111,
+      28
+    ],
+    "expected": [
+      "一键强化"
+    ],
+    "doc": "寻找一键强化并点击"
+  },
+  "Equip_EquipUp": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "next": [
+      "Equip_EquipUpSelectN",
+      "Equip_EquipUp"
+    ],
+    "post_delay": 2000,
+    "roi": [
+      1020,
+      646,
+      36,
+      28
+    ],
+    "template": [
+      "more.png"
+    ],
+    "doc": "寻找一键强化..."
+  },
+  "Equip_EquipUpSelectN": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "next": [
+      "Equip_EquipUpSelect"
+    ],
+    "post_delay": 1000,
+    "roi": [
+      761,
+      272,
+      139,
+      84
+    ],
+    "template": [
+      "N.png"
+    ],
+    "threshold": 0.99,
+    "doc": "点击N"
+  },
+  "Equip_EquipUpSelect": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "next": [
+      "Equip_EquipUpSelect2",
+      "Equip_EquipUpSelect"
+    ],
+    "post_delay": 1500,
+    "roi": [
+      761,
+      272,
+      139,
+      84
+    ],
+    "template": [
+      "N2.png"
+    ],
+    "threshold": 0.99,
+    "target": [
+      1164,
+      660,
+      0,
+      0
+    ],
+    "doc": "点击对号"
+  },
+  "Equip_EquipUpSelect2": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "Equip_EquipUpResult",
+      "Equip_EquipUpSelect2"
+    ],
+    "post_delay": 3000,
+    "roi": [
+      662,
+      576,
+      101,
+      31
+    ],
+    "expected": [
+      "强化"
+    ],
+    "doc": "确认强化"
+  },
+  "Equip_EquipUpResult": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "Equip_EquipDec"
+    ],
+    "post_delay": 3000,
+    "roi": [
+      708,
+      473,
+      100,
+      63
+    ],
+    "expected": [
+      "确认"
+    ],
+    "doc": "强化结果"
+  },
+  "Equip_EquipDec": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "Equip_EquipDec2",
+      "Equip_EquipDec"
+    ],
+    "post_delay": 1000,
+    "focus": "EM.装备分解",
+    "roi": [
+      1059,
+      644,
+      96,
+      34
+    ],
+    "expected": [
+      "一键分解"
+    ],
+    "doc": "点击一键分解"
+  },
+  "Equip_EquipDec2": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "next": [
+      "Equip_EquipDecSelectN",
+      "Equip_EquipDec2"
+    ],
+    "post_delay": 1000,
+    "roi": [
+      1019,
+      643,
+      35,
+      29
+    ],
+    "template": [
+      "more.png"
+    ],
+    "doc": "寻找一键分解..."
+  },
+  "Equip_EquipDecSelectN": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "next": [
+      "Equip_EquipDecSelect",
+      "Equip_EquipDecSelectN"
+    ],
+    "post_delay": 1000,
+    "roi": [
+      775,
+      215,
+      111,
+      68
+    ],
+    "template": [
+      "N.png"
+    ],
+    "doc": "点击N"
+  },
+  "Equip_EquipDecSelect": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "next": [
+      "Equip_EquipDecSelect2",
+      "Equip_EquipDecSelect"
+    ],
+    "post_delay": 3000,
+    "roi": [
+      775,
+      215,
+      111,
+      68
+    ],
+    "template": [
+      "N2.png"
+    ],
+    "threshold": 0.99,
+    "target": [
+      1167,
+      660,
+      0,
+      0
+    ],
+    "doc": "点击对号"
+  },
+  "Equip_EquipDecSelect2": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "Equip_EquipDecResult",
+      "Equip_EquipDecSelect2"
+    ],
+    "post_delay": 3000,
+    "roi": [
+      669,
+      472,
+      78,
+      33
+    ],
+    "expected": [
+      "分解"
+    ],
+    "doc": "确认分解"
+  },
+  "Equip_EquipDecResult": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "Equip_filter"
+    ],
+    "post_delay": 3000,
+    "roi": [
+      543,
+      618,
+      185,
+      57
+    ],
+    "expected": [
+      "点击画面即可返回"
+    ],
+    "doc": "分解结果"
+  },
+  "Equip_filter": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "next": [
+      "Equip_filterSR"
+    ],
+    "post_delay": 1000,
+    "focus": "EM.装备精炼",
+    "roi": [
+      1096,
+      62,
+      32,
+      31
+    ],
+    "template": [
+      "filter.png"
+    ],
+    "threshold": 0.99,
+    "doc": "点击左上筛选"
+  },
+  "Equip_filterSR": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "next": [
+      "Equip_filter+9"
+    ],
+    "post_delay": 1000,
+    "focus": "EM.装备精炼.稀有度",
+    "roi": [
+      243,
+      381,
+      390,
+      69
+    ],
+    "template": [
+      "filterSR.png"
+    ],
+    "threshold": 0.8,
+    "doc": "点击筛选"
+  },
+  "Equip_filter+9": {
+    "recognition": "FeatureMatch",
+    "action": "Click",
+    "next": [
+      "Equip_filterON"
+    ],
+    "post_delay": 1000,
+    "focus": "EM.装备精炼.+9",
+    "roi": [
+      236,
+      161,
+      817,
+      284
+    ],
+    "template": [
+      "+9.png",
+      "filterSR.png"
+    ],
+    "target": [
+      966,
+      228,
+      0,
+      0
+    ]
+  },
+  "Equip_filterON": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "Equip_FindRefining",
+      "Equip_filterON"
+    ],
+    "post_delay": 1000,
+    "focus": "EM.装备精炼.筛选...",
+    "roi": [
+      842,
+      554,
+      175,
+      34
+    ],
+    "expected": [
+      "确认"
+    ],
+    "doc": "应用筛选"
+  },
+  "Equip_FindRefining": {
+    "action": "Click",
+    "next": [
+      "Equip_Refining",
+      "Equip_FindRefining"
+    ],
+    "post_delay": 1500,
+    "target": [
+      622,
+      163,
+      0,
+      0
+    ],
+    "doc": "点击第一个装备"
+  },
+  "Equip_Refining": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "Equip_TouchRefining",
+      "Equip_Refining"
+    ],
+    "post_delay": 1000,
+    "focus": "EM.装备精炼.精炼",
+    "roi": [
+      935,
+      503,
+      57,
+      26
+    ],
+    "expected": [
+      "精炼"
+    ],
+    "doc": "点击精炼"
+  },
+  "Equip_TouchRefining": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "Equip_TouchRefiningBack"
+    ],
+    "post_delay": 3000,
+    "focus": "EM.装备精炼.再确认精炼",
+    "roi": [
+      961,
+      644,
+      137,
+      37
+    ],
+    "expected": [
+      "精炼"
+    ],
+    "doc": "精炼界面，点击精炼2"
+  },
+  "Equip_TouchRefiningBack": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "Equip_FinEquip"
+    ],
+    "post_delay": 3000,
+    "roi": [
+      962,
+      634,
+      136,
+      53
+    ],
+    "expected": [
+      "精炼"
+    ],
+    "target": [
+      87,
+      40,
+      0,
+      0
+    ],
+    "doc": "精炼界面，返回"
+  },
+  "Equip_FinEquip": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "Equip_FinEquip2",
+      "Equip_FinEquip"
+    ],
+    "post_delay": 3000,
+    "roi": [
+      1049,
+      639,
+      108,
+      47
+    ],
+    "expected": [
+      "一键分解"
+    ],
+    "target": [
+      87,
+      40,
+      0,
+      0
+    ],
+    "doc": "返回装备制作"
+  },
+  "Equip_FinEquip2": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "Equip_FinBackMapPage",
+      "Equip_FinEquip2"
+    ],
+    "post_delay": 3000,
+    "roi": [
+      1012,
+      617,
+      135,
+      77
+    ],
+    "expected": [
+      "立刻前往装备"
+    ],
+    "target": [
+      87,
+      40,
+      0,
+      0
+    ],
+    "doc": "返回主页"
+  },
+  "Equip_FinBackMapPage": {
+    "recognition": "TemplateMatch",
+    "next": [],
+    "roi": [
+      1122,
+      646,
+      40,
+      38
+    ],
+    "template": [
+      "pin.png"
+    ],
+    "doc": "识别右下图钉-章节主页"
+  }
+}

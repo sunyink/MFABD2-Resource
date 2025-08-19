@@ -1,0 +1,1056 @@
+{
+  "Collect_StartGame_HomePage": {
+    "next": [
+      "Collect_HomePageHub2",
+      "Collect_PerPetTask",
+      "Collect_HomePageHub"
+    ]
+  },
+  "Collect_HomePageHub": {
+    "recognition": "TemplateMatch",
+    "next": [
+      "Collect_PerPetTask",
+      "Collect_PVEChapterIden2#"
+    ],
+    "interrupt": [
+      "Collect_HomePageSwipeInitialize_BackHomePage"
+    ],
+    "post_delay": 2000,
+    "focus": "G=0.页面预期内，箱庭确认",
+    "roi": [
+      1047,
+      516,
+      107,
+      110
+    ],
+    "template": [
+      "Run.png"
+    ],
+    "green_mask": true,
+    "target": [
+      1186,
+      46,
+      0,
+      0
+    ],
+    "doc": "找到run-点击返回主页"
+  },
+  "Collect_HomePageHub2": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "next": [
+      "Collect_HomePageHub",
+      "Collect_HomePageHub2"
+    ],
+    "post_delay": 2000,
+    "focus": "G=1.页面非预期，点击返回按钮",
+    "roi": [
+      1,
+      1,
+      231,
+      124
+    ],
+    "template": [
+      "BackButGe.png",
+      "BackButGe2.png"
+    ],
+    "green_mask": true,
+    "replace": [],
+    "doc": "其他页面，返回按钮"
+  },
+  "Collect_PerPetTask": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "next": [
+      "Collect_StartGameType2"
+    ],
+    "post_delay": 5000,
+    "focus": "CM.宠物派遣",
+    "roi": [
+      345,
+      124,
+      617,
+      401
+    ],
+    "template": [
+      "PetMidGe.png"
+    ],
+    "threshold": 0.95,
+    "green_mask": true,
+    "doc": "宠物派遣"
+  },
+  "Collect_StartGameType2": {
+    "recognition": "TemplateMatch",
+    "next": [
+      "Collect_PVEChapterIden2#"
+    ],
+    "interrupt": [
+      "Collect_HomePageSwipeInitialize_BackHomePage"
+    ],
+    "post_delay": 2000,
+    "focus": "CM.StartGameType2",
+    "roi": [
+      1047,
+      516,
+      107,
+      110
+    ],
+    "template": [
+      "Run.png"
+    ],
+    "green_mask": true,
+    "target": [
+      1186,
+      46,
+      0,
+      0
+    ],
+    "doc": "找到run-点击返回主页（暂时不用）"
+  },
+  "Collect_PVEChapterIden2#": {
+    "recognition": "TemplateMatch",
+    "next": [
+      "Collect_HomePageSwipe_mini"
+    ],
+    "timeout": 10000,
+    "roi": [
+      111,
+      135,
+      753,
+      121
+    ],
+    "template": [
+      "pve2.png"
+    ],
+    "doc": "点击PVE本子2"
+  },
+  "Collect_HomePageSwipeInitialize_BackHomePage": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "next": [
+      "Collect_HomePageSwipeInitialize0.5",
+      "Collect_HomePageSwipeInitialize_BackHomePage"
+    ],
+    "post_delay": 2000,
+    "focus": "CB.进入卡带，复位",
+    "roi": [
+      1047,
+      516,
+      107,
+      110
+    ],
+    "template": [
+      "Run.png"
+    ],
+    "green_mask": true,
+    "target": [
+      1186,
+      46,
+      0,
+      0
+    ],
+    "doc": "找到run了-点击返回主页"
+  },
+  "Collect_HomePageSwipeInitialize0.5": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "Collect_HomePageSwipeInitialize1",
+      "Collect_HomePageSwipeInitialize0.5"
+    ],
+    "post_delay": 2000,
+    "roi": [
+      98,
+      656,
+      66,
+      32
+    ],
+    "expected": [
+      "抽抽乐"
+    ],
+    "target": [
+      1111,
+      650,
+      0,
+      0
+    ],
+    "doc": "进入卡带界面"
+  },
+  "Collect_HomePageSwipeInitialize1": {
+    "recognition": "OCR",
+    "action": "Swipe",
+    "next": [
+      "Collect_HomePageSwipeInitialize2",
+      "Collect_HomePageSwipeInitialize1"
+    ],
+    "post_delay": 1000,
+    "roi": [
+      99,
+      78,
+      212,
+      630
+    ],
+    "expected": [
+      "角色游戏卡",
+      "玩法游戏卡带"
+    ],
+    "begin": [
+      70,
+      270,
+      0,
+      0
+    ],
+    "end": [
+      70,
+      640,
+      0,
+      0
+    ],
+    "duration": 500,
+    "doc": "卡带界面复位拖动1，最上"
+  },
+  "Collect_HomePageSwipeInitialize2": {
+    "recognition": "OCR",
+    "action": "Swipe",
+    "next": [
+      "Collect_HomePageSwipeInitialize2.5"
+    ],
+    "post_delay": 3000,
+    "post_wait_freezes": 2000,
+    "roi": [
+      103,
+      82,
+      207,
+      65
+    ],
+    "expected": [
+      "剧情游戏卡"
+    ],
+    "begin": [
+      145,
+      200,
+      0,
+      0
+    ],
+    "end": [
+      1200,
+      200,
+      0,
+      0
+    ],
+    "duration": 500,
+    "doc": "卡带界面复位拖动2，最左"
+  },
+  "Collect_HomePageSwipeInitialize2.5": {
+    "recognition": "OCR",
+    "action": "Swipe",
+    "next": [
+      "Collect_HomePageSwipeInitializeEnd",
+      "Collect_HomePageSwipeInitialize2.5"
+    ],
+    "post_delay": 5000,
+    "post_wait_freezes": 2000,
+    "roi": [
+      103,
+      82,
+      207,
+      65
+    ],
+    "expected": [
+      "剧情游戏卡"
+    ],
+    "begin": [
+      145,
+      200,
+      0,
+      0
+    ],
+    "end": [
+      1200,
+      200,
+      0,
+      0
+    ],
+    "duration": 500,
+    "doc": "卡带界面复位拖动2，最左"
+  },
+  "Collect_HomePageSwipeInitializeEnd": {
+    "recognition": "TemplateMatch",
+    "focus": "CB.卡带已复位",
+    "roi": [
+      108,
+      128,
+      696,
+      174
+    ],
+    "template": [
+      "pve2b.png"
+    ],
+    "doc": "判定已复位到最左"
+  },
+  "Collect_HomePageSwipe_mini": {
+    "recognition": "OCR",
+    "action": "Swipe",
+    "next": [
+      "Collect_ChapterSelection1"
+    ],
+    "timeout": 20000,
+    "post_delay": 8000,
+    "focus": "CB.卡带向目标拖动mini",
+    "roi": [
+      99,
+      78,
+      212,
+      630
+    ],
+    "expected": [
+      "角色游戏卡"
+    ],
+    "begin": [
+      1100,
+      200,
+      0,
+      0
+    ],
+    "end": [
+      145,
+      200,
+      0,
+      0
+    ],
+    "duration": 1500,
+    "doc": "主线卡带界面拖动，稍微向右"
+  },
+  "Collect_HomePageSwipeQue": {
+    "action": "Click",
+    "next": [
+      "Collect_ChapterSelection1"
+    ],
+    "target": [
+      800,
+      15,
+      0,
+      0
+    ]
+  },
+  "Collect_HomePageSwipe_precise": {
+    "recognition": "OCR",
+    "action": "Swipe",
+    "timeout": 20000,
+    "post_delay": 8000,
+    "focus": "CB.卡带向目标拖动-精确1",
+    "roi": [
+      99,
+      78,
+      212,
+      630
+    ],
+    "expected": [
+      "角色游戏卡"
+    ],
+    "begin": [
+      1100,
+      200,
+      0,
+      0
+    ],
+    "end": [
+      145,
+      200,
+      0,
+      0
+    ],
+    "duration": 1500,
+    "doc": "主线卡带界面拖动，稍微向右"
+  },
+  "Collect_ChapterSelection1": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "next": [
+      "Collect_ChapterSelection2"
+    ],
+    "interrupt": [
+      "Collect_OperationsMain_Sandplay"
+    ],
+    "timeout": 30000,
+    "on_error": [
+      "Collect_ChapterSelectionError"
+    ],
+    "post_delay": 5000,
+    "focus": "CM.目标图1",
+    "roi": [
+      89,
+      131,
+      1166,
+      198
+    ],
+    "template": [
+      "pve9.png"
+    ],
+    "threshold": 0.85,
+    "doc": "识"
+  },
+  "Collect_ChapterSelection2": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "next": [
+      "Collect_ChapterSelection3"
+    ],
+    "interrupt": [
+      "Collect_OperationsMain_Sandplay"
+    ],
+    "timeout": 30000,
+    "on_error": [
+      "Collect_ChapterSelectionError"
+    ],
+    "post_delay": 5000,
+    "focus": "CM.目标图2",
+    "roi": [
+      89,
+      131,
+      1166,
+      198
+    ],
+    "template": [
+      "pve7.png"
+    ],
+    "threshold": 0.85,
+    "doc": "识"
+  },
+  "Collect_ChapterSelection3": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "next": [
+      "Collect_ChapterSelectionEnd"
+    ],
+    "interrupt": [
+      "Collect_OperationsMain_Sandplay"
+    ],
+    "timeout": 30000,
+    "on_error": [
+      "Collect_ChapterSelectionError"
+    ],
+    "post_delay": 5000,
+    "focus": "CM.目标图3",
+    "roi": [
+      89,
+      131,
+      1166,
+      198
+    ],
+    "template": [
+      "pve8.png"
+    ],
+    "threshold": 0.85,
+    "doc": "识"
+  },
+  "Collect_ChapterSelectionEnd": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "next": [
+      "Collect_ChapterSelectionError2"
+    ],
+    "on_error": [
+      "Collect_ChapterSelectionError"
+    ],
+    "post_delay": 5000,
+    "focus": "CM.目标图END",
+    "roi": [
+      109,
+      124,
+      1113,
+      210
+    ],
+    "template": [
+      "pve10.png"
+    ],
+    "target": [
+      120,
+      35,
+      0,
+      0
+    ],
+    "doc": "章节选择顺序，3"
+  },
+  "Collect_ChapterSelectionError": {
+    "action": "Click",
+    "next": [
+      "Collect_ChapterSelectionError2"
+    ],
+    "post_delay": 5000,
+    "focus": "CM.非正常退出卡带标记",
+    "target": [
+      120,
+      35,
+      0,
+      0
+    ],
+    "doc": "防止影响后续流程，将卡带页面结束"
+  },
+  "Collect_ChapterSelectionError2": {
+    "action": "Click",
+    "focus": "CM.通常退出卡带",
+    "target": [
+      120,
+      35,
+      0,
+      0
+    ],
+    "doc": "防止影响后续流程，将卡带页面结束"
+  },
+  "Collect_OperationsMain_Sandplay": {
+    "recognition": "TemplateMatch",
+    "next": [
+      "Collect_OperationsMain_ToAreaMap"
+    ],
+    "interrupt": [
+      "Collect_FindTeleporCircle0.9",
+      "Collect_FindTeleporCircle",
+      "Collect_ForceTeleporCircle"
+    ],
+    "post_delay": 1000,
+    "focus": "CB.箱庭模块启动",
+    "roi": [
+      1122,
+      646,
+      40,
+      38
+    ],
+    "template": [
+      "pin.png"
+    ],
+    "doc": "中断：章节内主要操作开始。找到图钉，确认进入箱庭"
+  },
+  "Collect_OperationsMain_ToAreaMap": {
+    "recognition": "OCR",
+    "next": [
+      "Collect_TargetMap1"
+    ],
+    "interrupt": [
+      "Collect_MapLift"
+    ],
+    "roi": [
+      183,
+      11,
+      249,
+      53
+    ],
+    "template": [
+      "移动魔法阵"
+    ],
+    "doc": "找到图钉，进入区域地图"
+  },
+  "Collect_PetTask": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "post_delay": 5000,
+    "roi": [
+      866,
+      550,
+      28,
+      28
+    ],
+    "template": [
+      "PetTask.png"
+    ],
+    "doc": "宠物派遣"
+  },
+  "Collect_TargetMap1": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "Collect_TargetMap2"
+    ],
+    "interrupt": [
+      "Collect_ClickTeleporCircleMap",
+      "Collect_ClickBackOnSecureMap"
+    ],
+    "roi": [
+      408,
+      622,
+      466,
+      47
+    ],
+    "expected": [
+      "达普雷镇",
+      "雷瓦汀基地",
+      "拉勒凯镇",
+      "罗戴夫镇"
+    ],
+    "doc": "详细地图确定位置"
+  },
+  "Collect_TargetMap2": {
+    "recognition": "OCR",
+    "next": [
+      "Collect_TargetMap3"
+    ],
+    "interrupt": [
+      "Collect_ClickTeleporCircleMap"
+    ],
+    "roi": [
+      408,
+      622,
+      466,
+      47
+    ],
+    "expected": [
+      "战斗I",
+      "战斗 I",
+      "封锁矿山",
+      "加尔顿山前段",
+      "洞穴神殿",
+      "贫民区"
+    ],
+    "doc": "详细地图确定位置2"
+  },
+  "Collect_TargetMap3": {
+    "recognition": "OCR",
+    "next": [
+      "Collect_TargetMapEnd"
+    ],
+    "interrupt": [
+      "Collect_ClickTeleporCircleMap"
+    ],
+    "roi": [
+      408,
+      622,
+      466,
+      47
+    ],
+    "expected": [
+      "战斗II",
+      "战斗Ⅱ",
+      "战斗 II",
+      "战斗 Ⅱ",
+      "禁地矿山",
+      "加尔顿山后段",
+      "隐藏神殿",
+      "盗贼据点"
+    ],
+    "doc": "详细地图确定位置3"
+  },
+  "Collect_TargetMapEnd": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "Collect_OperationsMain_PVEChapterIden2#"
+    ],
+    "interrupt": [
+      "Collect_HomePageSwipeInitialize_BackHomePage"
+    ],
+    "focus": "CB.卡带内流程进入END环节",
+    "roi": [
+      408,
+      622,
+      466,
+      47
+    ],
+    "expected": [
+      "达雷普旅馆",
+      "雷瓦汀基地救护站",
+      "拉勒凯旅馆",
+      "罗戴夫旅馆"
+    ],
+    "target": [
+      120,
+      35,
+      0,
+      0
+    ]
+  },
+  "Collect_OperationsMain_PVEChapterIden2#": {
+    "recognition": "TemplateMatch",
+    "next": [
+      "Collect_HomePageSwipe_precise"
+    ],
+    "roi": [
+      405,
+      157,
+      78,
+      38
+    ],
+    "template": [
+      "pve2.png"
+    ],
+    "doc": "点击PVE本子2"
+  },
+  "Collect_ClickTeleporCircleMap": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "next": [
+      "Collect_Skill1"
+    ],
+    "post_delay": 5000,
+    "focus": "CB.区域地图.tp1.找到传送阵图标",
+    "roi": [
+      100,
+      71,
+      1133,
+      534
+    ],
+    "template": [
+      "TpCircleMap.png"
+    ],
+    "expected": [
+      ""
+    ],
+    "doc": "详细地图内传送阵选择"
+  },
+  "Collect_ClickBackOnSecureMap": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "Collect_Skill1"
+    ],
+    "focus": "CB.区域地图.tp1.已正确",
+    "roi": [
+      408,
+      622,
+      466,
+      47
+    ],
+    "expected": [
+      "达普雷镇",
+      "雷瓦汀基地",
+      "拉勒凯镇",
+      "罗戴夫镇"
+    ],
+    "target": [
+      120,
+      35,
+      0,
+      0
+    ],
+    "doc": "详细地图确定位置"
+  },
+  "Collect_Skill1": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "next": [
+      "Collect_Skill2"
+    ],
+    "post_delay": 5000,
+    "roi": [
+      961,
+      89,
+      60,
+      330
+    ],
+    "template": [
+      "todaytask.png"
+    ],
+    "target": [
+      1012,
+      648,
+      0,
+      0
+    ],
+    "doc": "PVE点击技能1。next暴力修改：因无物品可吸取不会消耗次数，故两个吸取技能连续使用；且缩减延迟。"
+  },
+  "Collect_Skill2": {
+    "action": "Click",
+    "next": [
+      "Collect_Skill2_2"
+    ],
+    "post_delay": 500,
+    "roi": [
+      961,
+      89,
+      60,
+      330
+    ],
+    "threshold": 0.98,
+    "lower": [
+      255,
+      255,
+      255
+    ],
+    "upper": [
+      255,
+      255,
+      255
+    ],
+    "target": [
+      980,
+      560,
+      0,
+      0
+    ],
+    "doc": "PVE点击技能2"
+  },
+  "Collect_Skill2_2": {
+    "action": "Click",
+    "next": [
+      "Collect_Skill3"
+    ],
+    "post_delay": 5000,
+    "target": [
+      1190,
+      485,
+      0,
+      0
+    ],
+    "doc": "PVE点击技能2"
+  },
+  "Collect_Skill3": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "next": [
+      "Collect_OperationsMain_OperationsEnd"
+    ],
+    "interrupt": [
+      "Collect_FindTeleporCircle0.9",
+      "Collect_FindTeleporCircle",
+      "Collect_ForceTeleporCircle"
+    ],
+    "post_delay": 5000,
+    "roi": [
+      961,
+      89,
+      60,
+      330
+    ],
+    "template": [
+      "todaytask.png"
+    ],
+    "target": [
+      1010,
+      480,
+      0,
+      0
+    ],
+    "doc": "PVE点击技能3"
+  },
+  "Collect_OperationsMain_OperationsEnd": {
+    "recognition": "OCR",
+    "next": [
+      "Collect_MapRight"
+    ],
+    "interrupt": [
+      "Collect_FindTeleporCircle"
+    ],
+    "roi": [
+      128,
+      13,
+      329,
+      55
+    ],
+    "template": [
+      "移动魔法阵"
+    ],
+    "doc": "找到图钉 ，进入区域地图"
+  },
+  "Collect_MapRight": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "post_delay": 5000,
+    "roi": [
+      838,
+      311,
+      418,
+      63
+    ],
+    "template": [
+      "TpMapRight.png"
+    ],
+    "green_mask": true,
+    "doc": "详细地图内右图标，目的右移动1格"
+  },
+  "Collect_FinBackMapPage": {
+    "recognition": "TemplateMatch",
+    "roi": [
+      1122,
+      646,
+      40,
+      38
+    ],
+    "template": [
+      "pin.png"
+    ],
+    "doc": "找到图钉了-点击返回主页"
+  },
+  "Collect_FindTeleporCircle0.9": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "focus": "CB.箱庭地图内找到传送阵-按钮标",
+    "template": [
+      "IcoHand.png"
+    ],
+    "green_mask": true
+  },
+  "Collect_FindTeleporCircle": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "post_delay": 5000,
+    "focus": "CB.箱庭地图内找到传送阵-物件",
+    "roi": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "template": [
+      "TpCircle.png",
+      "TpCircle2.png",
+      "TpCircle3.png"
+    ],
+    "doc": "场景地图内传送阵选择"
+  },
+  "Collect_ForceTeleporCircle": {
+    "recognition": "TemplateMatch",
+    "next": [
+      "Collect_ForceTeleporCircleClick1"
+    ],
+    "post_delay": 5000,
+    "focus": "CB.技能传送门.进入流程",
+    "roi": [
+      1122,
+      646,
+      40,
+      38
+    ],
+    "template": [
+      "pin.png"
+    ],
+    "doc": "寻找传送阵，使用技能召唤传送阵"
+  },
+  "Collect_ForceTeleporCircleClick1": {
+    "action": "Click",
+    "next": [
+      "Collect_ForceTeleporCircleClick2"
+    ],
+    "target": [
+      1200,
+      665,
+      0,
+      0
+    ],
+    "doc": "点击Pin2快捷技能栏"
+  },
+  "Collect_ForceTeleporCircleClick2": {
+    "action": "Click",
+    "next": [
+      "Collect_ForceTeleporCircleClick2.1",
+      "Collect_ForceTeleporCircleClick2.14"
+    ],
+    "post_delay": 5000,
+    "target": [
+      1012,
+      648,
+      0,
+      0
+    ],
+    "doc": "点击Pin2快捷技能栏中的传送技能"
+  },
+  "Collect_ForceTeleporCircleClick2.1": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "next": [
+      "Collect_ForceTeleporCircleClick2.14"
+    ],
+    "post_delay": 2000,
+    "roi": [
+      270,
+      317,
+      68,
+      54
+    ],
+    "template": [
+      "TpMapLeft.png"
+    ],
+    "green_mask": true,
+    "doc": "存在左键就不停点击，否则下一步找传送门"
+  },
+  "Collect_ForceTeleporCircleClick2.14": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "next": [
+      "Collect_ForceTeleporCircleClick2.15"
+    ],
+    "post_delay": 1000,
+    "roi": [
+      209,
+      82,
+      912,
+      487
+    ],
+    "template": [
+      "TpCircleMapGE.png"
+    ],
+    "green_mask": true
+  },
+  "Collect_ForceTeleporCircleClick2.15": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "Collect_ForceTeleporCircleClick2.2"
+    ],
+    "post_delay": 5000,
+    "roi": [
+      680,
+      427,
+      60,
+      33
+    ],
+    "expected": [
+      "生成"
+    ]
+  },
+  "Collect_ForceTeleporCircleClick2.2": {
+    "next": [
+      "Collect_ForceTeleporCircleClick3"
+    ],
+    "post_delay": 5000,
+    "target": [
+      1012,
+      648,
+      0,
+      0
+    ],
+    "doc": "找传送门图标点一下"
+  },
+  "Collect_ForceTeleporCircleClick3": {
+    "action": "Click",
+    "post_delay": 5000,
+    "target": [
+      1145,
+      665,
+      0,
+      0
+    ],
+    "doc": "点击Pin1快捷技能栏恢复正常"
+  },
+  "Collect_MapLift": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "roi": [
+      270,
+      317,
+      68,
+      54
+    ],
+    "template": [
+      "TpMapLeft.png"
+    ],
+    "green_mask": true,
+    "doc": "详细地图内左图标，目的移动到最左"
+  },
+  "test01": {
+    "action": "Click",
+    "target": [
+      120,
+      35,
+      0,
+      0
+    ]
+  },
+  "test02": {
+    "action": "Click",
+    "target": [
+      120,
+      700,
+      0,
+      0
+    ]
+  }
+}

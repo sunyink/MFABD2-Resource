@@ -1,0 +1,7 @@
+{
+  "Close_HomePage": {
+    "action": "StopApp",
+    "package": "com.neowizgames.game.browndust2",
+    "doc": "PVE点击技能1。next暴力修改：因无物品可吸取不会消耗次数，故两个吸取技能连续使用；且缩减延迟。"
+  }
+}

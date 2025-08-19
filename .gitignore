@@ -453,3 +453,5 @@ debug
 *.rar
 *.zip
 *.bak
+*.ffs_db
+assets/sync.ffs_db
