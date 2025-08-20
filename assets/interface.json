@@ -101,7 +101,7 @@
                 ],
               "template": [
                    "pve2b.png"
-                ],
+                ]
             }
           }
         }
@@ -224,7 +224,7 @@
                 390,
                 0,
                 0
-               ],
+               ]
             }
           }
         },
@@ -237,7 +237,7 @@
                 390,
                 0,
                 0
-               ],
+               ]
             },
             "Battle_CollectMap": {
               "next": [
@@ -431,5 +431,5 @@
   },
   "name": "MFABD2",
   "url": "https://github.com/sunyink/MFABD2-Resource",
-  "version": "v0.0.1"
+  "version": "v1.0.1"
 }
