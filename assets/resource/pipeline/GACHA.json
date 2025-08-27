@@ -10,7 +10,9 @@
     "recognition": "TemplateMatch",
     "action": "Click",
     "next": [
-      "Gacha_EnterGacha"
+      "Gacha_EnterGacha",
+      "Gacha_HomePageHub1",
+      "Gacha_HomePageHub"
     ],
     "post_delay": 2000,
     "focus": "G=0.页面预期内，普通启动。M.箱庭地图run已确认",
@@ -38,7 +40,7 @@
     "next": [
       "Gacha_EnterGacha",
       "Gacha_HomePageHub1",
-      "Gacha_HomePageHub2"
+      "Gacha_HomePageHub"
     ],
     "post_delay": 2000,
     "focus": "G=0.页面预期内，普通启动。M.箱庭地图pin已确认",
@@ -267,6 +269,7 @@
     "on_error": [
       "Gacha_Slip"
     ],
+    "post_delay": 2500,
     "focus": "GA.免费抽 (^_−)☆",
     "roi": [
       393,
@@ -399,7 +402,7 @@
       "Gacha_BackMapPage",
       "Gacha_FinGacha"
     ],
-    "post_delay": 1000,
+    "post_delay": 3000,
     "focus": "GA.退出抽卡",
     "roi": [
       957,
@@ -408,7 +411,7 @@
       110
     ],
     "expected": [
-      "查看概率"
+      "概率"
     ],
     "target": [
       120,
@@ -425,7 +428,7 @@
       "Gacha_FinBackMapPage",
       "Gacha_BackMapPage"
     ],
-    "post_delay": 500,
+    "post_delay": 1000,
     "roi": [
       98,
       656,

@@ -136,7 +136,8 @@
     "recognition": "OCR",
     "action": "Click",
     "next": [
-      "Event_FastNormalBattle"
+      "Event_FastNormalBattle",
+      "Event_EnterNormalBattle"
     ],
     "on_error": [
       "Event_NormalBattleBack2"
@@ -144,13 +145,19 @@
     "post_delay": 3000,
     "focus": "EM.活动.选难度",
     "roi": [
-      155,
-      483,
-      964,
-      205
+      69,
+      365,
+      1179,
+      324
     ],
     "expected": [
       "普通"
+    ],
+    "target_offset": [
+      5,
+      -30,
+      0,
+      0
     ],
     "doc": "点击普通战斗"
   },
@@ -260,6 +267,7 @@
     "recognition": "OCR",
     "action": "Click",
     "next": [
+      "Event_NormalBattleBack",
       "Event_NormalBattleBack2"
     ],
     "post_delay": 1000,

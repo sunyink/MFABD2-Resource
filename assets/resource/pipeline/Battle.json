@@ -127,7 +127,7 @@
     "interrupt": [
       "Battle_QuickBattleButton"
     ],
-    "timeout": 3000,
+    "timeout": 5000,
     "post_delay": 3000,
     "pre_wait_freezes": 3000,
     "roi": [

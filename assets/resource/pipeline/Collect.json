@@ -35,11 +35,39 @@
     ],
     "doc": "找到run-点击返回主页"
   },
+  "Collect_HomePageHub1": {
+    "recognition": "TemplateMatch",
+    "next": [
+      "Collect_PerPetTask",
+      "Collect_PVEChapterIden2#"
+    ],
+    "interrupt": [
+      "Collect_HomePageSwipeInitialize_BackHomePage"
+    ],
+    "post_delay": 2000,
+    "focus": "G=0.页面预期内。BM.箱庭地图pin已确认",
+    "roi": [
+      1108,
+      637,
+      65,
+      57
+    ],
+    "template": [
+      "pin.png"
+    ],
+    "target": [
+      1186,
+      46,
+      0,
+      0
+    ]
+  },
   "Collect_HomePageHub2": {
     "recognition": "TemplateMatch",
     "action": "Click",
     "next": [
       "Collect_HomePageHub",
+      "Collect_HomePageHub1",
       "Collect_HomePageHub2"
     ],
     "post_delay": 2000,
@@ -122,6 +150,7 @@
     "template": [
       "pve2.png"
     ],
+    "threshold": 0.95,
     "doc": "点击PVE本子2"
   },
   "Collect_HomePageSwipeInitialize_BackHomePage": {
@@ -731,13 +760,13 @@
     ],
     "post_delay": 5000,
     "roi": [
-      961,
-      89,
-      60,
-      330
+      1108,
+      637,
+      65,
+      57
     ],
     "template": [
-      "todaytask.png"
+      "pin.png"
     ],
     "target": [
       1012,
@@ -805,13 +834,13 @@
     ],
     "post_delay": 5000,
     "roi": [
-      961,
-      89,
-      60,
-      330
+      1108,
+      637,
+      65,
+      57
     ],
     "template": [
-      "todaytask.png"
+      "pin.png"
     ],
     "target": [
       1010,

@@ -281,7 +281,7 @@
     "template": [
       "N.png"
     ],
-    "threshold": 0.99,
+    "threshold": 0.9,
     "doc": "点击N"
   },
   "Equip_EquipUpSelect": {
@@ -526,6 +526,7 @@
       "+9.png",
       "filterSR.png"
     ],
+    "count": 12,
     "target": [
       966,
       228,
@@ -540,7 +541,7 @@
       "Equip_FindRefining",
       "Equip_filterON"
     ],
-    "post_delay": 1000,
+    "post_delay": 3000,
     "focus": "EM.装备精炼.筛选...",
     "roi": [
       842,
@@ -575,7 +576,7 @@
       "Equip_TouchRefining",
       "Equip_Refining"
     ],
-    "post_delay": 1000,
+    "post_delay": 2000,
     "focus": "EM.装备精炼.精炼",
     "roi": [
       935,

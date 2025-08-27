@@ -78,6 +78,13 @@
       "entry": "Mail_HomePage"
     },
     {
+      "name": "肉鸽塔每日快速战斗",
+      "entry": "Redemption_HomePage",
+      "option": [
+        "肉鸽塔快速战斗"
+      ]
+    },
+    {
       "name": "结束游戏",
       "entry": "Close_HomePage"
     },
@@ -400,6 +407,24 @@
         }
       ]
     },
+    "肉鸽塔快速战斗": {
+      "cases": [
+        {
+          "name": "关闭",
+          "pipeline_override": {
+          	"Redemption_HomePage": {
+               "next": [
+                "Redemption_Evil_Redemption_End"
+                ]
+            }
+          }
+        },
+        {
+          "name": "开启",
+          "pipeline_override": {}
+        }
+      ]
+    },
     "公会奖励": {
       "cases": [
         {
@@ -431,5 +456,5 @@
   },
   "name": "MFABD2",
   "url": "https://github.com/sunyink/MFABD2-Resource",
-  "version": "v1.0.1"
+  "version": "v1.0.2"
 }

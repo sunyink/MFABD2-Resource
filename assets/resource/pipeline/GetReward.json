@@ -292,18 +292,30 @@
     "doc": "餐馆结算页，进入餐馆"
   },
   "GetReward_Busin_GiftGet": {
+    "recognition": "TemplateMatch",
     "action": "Click",
     "next": [
+      "GetReward_Busin_GiftGet",
       "GetReward_Busin_BackPVEPage"
     ],
     "post_delay": 3000,
-    "target": [
-      135,
-      220,
+    "roi": [
+      71,
+      176,
+      276,
+      116
+    ],
+    "template": [
+      "ChangkeGe.png"
+    ],
+    "green_mask": true,
+    "target_offset": [
+      -20,
+      35,
       0,
       0
     ],
-    "doc": "直接点击常客位置，获取水晶。不设置判定。"
+    "doc": "点击常客位置，获取水晶。"
   },
   "GetReward_Busin_Back": {
     "action": "Click",

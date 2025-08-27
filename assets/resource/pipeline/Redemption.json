@@ -1,0 +1,615 @@
+{
+  "Redemption_HomePage": {
+    "next": [
+      "Redemption_HomePageHub",
+      "Redemption_HomePageHub2",
+      "Redemption_HomePageHub1"
+    ]
+  },
+  "Redemption_HomePageHub": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "next": [
+      "Redemption_HomePage2",
+      "Redemption_HomePageHub",
+      "Redemption_HomePageHub1"
+    ],
+    "post_delay": 2000,
+    "focus": "G=0.页面预期内，普通启动。M.箱庭地图run已确认",
+    "roi": [
+      1047,
+      516,
+      107,
+      110
+    ],
+    "template": [
+      "Run.png"
+    ],
+    "green_mask": true,
+    "target": [
+      1186,
+      46,
+      0,
+      0
+    ],
+    "doc": "找到run-点击返回主页"
+  },
+  "Redemption_HomePageHub1": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "next": [
+      "Redemption_HomePage2",
+      "Redemption_HomePageHub",
+      "Redemption_HomePageHub1"
+    ],
+    "post_delay": 2000,
+    "focus": "G=0.页面预期内，普通启动。BM.箱庭地图pin已确认",
+    "roi": [
+      1108,
+      637,
+      65,
+      57
+    ],
+    "template": [
+      "pin.png"
+    ],
+    "target": [
+      1186,
+      46,
+      0,
+      0
+    ]
+  },
+  "Redemption_HomePageHub2": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "next": [
+      "Redemption_HomePageHub",
+      "Redemption_HomePageHub1",
+      "Redemption_HomePageHub2"
+    ],
+    "post_delay": 2000,
+    "focus": "G=1.页面非预期，点击返回按钮",
+    "roi": [
+      1,
+      1,
+      231,
+      124
+    ],
+    "template": [
+      "BackButGe.png",
+      "BackButGe2.png"
+    ],
+    "green_mask": true,
+    "replace": [],
+    "doc": "其他页面，返回按钮"
+  },
+  "Redemption_HomePage2": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "Redemption_MoreBook_Evil",
+      "Redemption_HomePageSwipe"
+    ],
+    "focus": "PM.主页面",
+    "roi": [
+      98,
+      656,
+      66,
+      32
+    ],
+    "expected": [
+      "抽抽乐"
+    ],
+    "target": [
+      1111,
+      650,
+      0,
+      0
+    ],
+    "doc": "识别左下抽抽乐-主页-点击选择章节"
+  },
+  "Redemption_HomePageSwipe": {
+    "recognition": "OCR",
+    "action": "Swipe",
+    "next": [
+      "Redemption_MoreBook_Evil",
+      "Redemption_HomePageSwipe"
+    ],
+    "pre_delay": 1000,
+    "focus": "PM.卡带界面垂直复位(一次性)",
+    "roi": [
+      99,
+      78,
+      212,
+      630
+    ],
+    "expected": [
+      "角色游戏卡"
+    ],
+    "begin": [
+      70,
+      640,
+      0,
+      0
+    ],
+    "end": [
+      70,
+      270,
+      0,
+      0
+    ],
+    "duration": 500
+  },
+  "Redemption_MoreBook_Evil": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "Redemption_Mapck",
+      "Redemption_Mapck1",
+      "Redemption_MoreBook_Evil"
+    ],
+    "post_delay": 8000,
+    "focus": "PM.More卡带",
+    "roi": [
+      392,
+      469,
+      98,
+      40
+    ],
+    "threshold": 0.9,
+    "expected": [
+      "挑战"
+    ],
+    "target_offset": [
+      0,
+      -100,
+      0,
+      0
+    ],
+    "doc": "点击More本子"
+  },
+  "Redemption_Mapck": {
+    "recognition": "TemplateMatch",
+    "next": [
+      "Redemption_Evil_Move"
+    ],
+    "post_delay": 2000,
+    "focus": "G=0.页面预期内，普通启动。M.箱庭地图run已确认",
+    "roi": [
+      1047,
+      516,
+      107,
+      110
+    ],
+    "template": [
+      "Run.png"
+    ],
+    "green_mask": true,
+    "target": [
+      1186,
+      46,
+      0,
+      0
+    ],
+    "doc": "找到run-点击返回主页"
+  },
+  "Redemption_Mapck1": {
+    "recognition": "TemplateMatch",
+    "next": [
+      "Redemption_Evil_Move"
+    ],
+    "post_delay": 2000,
+    "focus": "G=0.页面预期内，普通启动。BM.箱庭地图pin已确认",
+    "roi": [
+      1108,
+      637,
+      65,
+      57
+    ],
+    "template": [
+      "pin.png"
+    ],
+    "target": [
+      1186,
+      46,
+      0,
+      0
+    ]
+  },
+  "Redemption_Evil_Move": {
+    "action": "LongPress",
+    "next": [
+      "Redemption_Evil_Redemption_Start"
+    ],
+    "post_delay": 3000,
+    "focus": "MM.向上行走。BM.箱庭地图pin确认",
+    "roi": [
+      1108,
+      637,
+      65,
+      57
+    ],
+    "template": [
+      "pin.png"
+    ],
+    "target": [
+      651,
+      171,
+      0,
+      0
+    ],
+    "duration": 5000
+  },
+  "Redemption_Evil_Redemption_Start": {
+    "next": [
+      "Redemption_Evil_Redemption_In"
+    ]
+  },
+  "Redemption_Evil_Redemption_In": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "Redemption_Evil_Redemption_SelLv9"
+    ],
+    "post_delay": 3000,
+    "roi": [
+      524,
+      391,
+      190,
+      78
+    ],
+    "expected": [
+      "救赎之塔"
+    ]
+  },
+  "Redemption_Evil_Redemption_SelLv9": {
+    "recognition": "ColorMatch",
+    "action": "Click",
+    "next": [
+      "Redemption_Evil_Redemption_DetPassLv",
+      "Redemption_Evil_Redemption_Lv1"
+    ],
+    "interrupt": [
+      "Redemption_Evil_Redemption_SelLv-1"
+    ],
+    "post_delay": 3000,
+    "roi": [
+      237,
+      678,
+      2,
+      10
+    ],
+    "method": 4,
+    "green_mask": false,
+    "lower": [
+      94,
+      96,
+      98
+    ],
+    "upper": [
+      94,
+      96,
+      98
+    ],
+    "target": [
+      238,
+      683,
+      0,
+      0
+    ]
+  },
+  "Redemption_Evil_Redemption_DetPassLv": {
+    "recognition": "TemplateMatch",
+    "next": [
+      "Redemption_Evil_Redemption_QuickBattUnable",
+      "Redemption_Evil_Redemption_QuickBatt"
+    ],
+    "template": [
+      "RglikeGouGe.png"
+    ],
+    "green_mask": true
+  },
+  "Redemption_Evil_Redemption_Lv1": {
+    "recognition": "ColorMatch",
+    "next": [
+      "Redemption_Evil_Redemption_QuickBattUnable",
+      "Redemption_Evil_Redemption_QuickBatt"
+    ],
+    "roi": [
+      231,
+      110,
+      5,
+      5
+    ],
+    "method": 4,
+    "lower": [
+      255,
+      255,
+      255
+    ],
+    "upper": [
+      255,
+      255,
+      255
+    ]
+  },
+  "Redemption_Evil_Redemption_SelLv-1": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "post_delay": 500,
+    "roi": [
+      172,
+      66,
+      180,
+      653
+    ],
+    "template": [
+      "LV.png"
+    ],
+    "green_mask": true,
+    "target_offset": [
+      8,
+      -95,
+      0,
+      0
+    ]
+  },
+  "Redemption_Evil_Redemption_QuickBatt": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "Redemption_Evil_Redemption_MAX",
+      "Redemption_Evil_Redemption_QuickBattNoAP"
+    ],
+    "post_delay": 1000,
+    "roi": [
+      832,
+      621,
+      134,
+      46
+    ],
+    "expected": [
+      "快速战斗"
+    ]
+  },
+  "Redemption_Evil_Redemption_QuickBattUnable": {
+    "recognition": "ColorMatch",
+    "next": [
+      "Redemption_Evil_Redemption_PageBackHub"
+    ],
+    "roi": [
+      834,
+      637,
+      15,
+      13
+    ],
+    "method": 4,
+    "count": 150,
+    "lower": [
+      84,
+      84,
+      82
+    ],
+    "upper": [
+      84,
+      84,
+      82
+    ]
+  },
+  "Redemption_Evil_Redemption_QuickBattNoAP": {
+    "recognition": "OCR",
+    "next": [
+      "Redemption_Evil_Redemption_PageBackHub",
+      "Redemption_Evil_Redemption_QuickBattNoAP"
+    ],
+    "post_delay": 2000,
+    "roi": [
+      512,
+      206,
+      255,
+      88
+    ],
+    "expected": [
+      "钥匙不足"
+    ],
+    "target": [
+      568,
+      479,
+      0,
+      0
+    ]
+  },
+  "Redemption_Evil_Redemption_MAX": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "Redemption_Evil_Redemption_On"
+    ],
+    "post_delay": 500,
+    "roi": [
+      769,
+      340,
+      85,
+      47
+    ],
+    "expected": [
+      "MAX"
+    ]
+  },
+  "Redemption_Evil_Redemption_On": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "Redemption_Evil_Redemption_Result",
+      "Redemption_Evil_Redemption_On"
+    ],
+    "post_delay": 8000,
+    "roi": [
+      618,
+      566,
+      176,
+      29
+    ],
+    "expected": [
+      "战斗"
+    ]
+  },
+  "Redemption_Evil_Redemption_Result": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "Redemption_Evil_Redemption_PageBackHub",
+      "Redemption_Evil_Redemption_Result"
+    ],
+    "post_delay": 3000,
+    "roi": [
+      800,
+      597,
+      212,
+      85
+    ],
+    "expected": [
+      "点击画面继续"
+    ]
+  },
+  "Redemption_Evil_Redemption_PageBackHub": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "next": [
+      "Redemption_BackPVEPage",
+      "Redemption_Evil_Redemption_PageBackHub"
+    ],
+    "post_delay": 2500,
+    "focus": "G=1.页面非预期，点击返回按钮",
+    "roi": [
+      1,
+      1,
+      231,
+      124
+    ],
+    "template": [
+      "BackButGe.png",
+      "BackButGe2.png"
+    ],
+    "green_mask": true,
+    "replace": [],
+    "doc": "其他页面，返回按钮"
+  },
+  "Redemption_BackPVEPage": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "next": [
+      "Redemption_BackHomePage2"
+    ],
+    "post_delay": 3000,
+    "focus": "PM.开始离开PVP卡带",
+    "roi": [
+      1122,
+      646,
+      40,
+      38
+    ],
+    "template": [
+      "pin.png"
+    ],
+    "target": [
+      1186,
+      46,
+      0,
+      0
+    ],
+    "doc": "找到图钉-点击返回主页"
+  },
+  "Redemption_BackHomePage2": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "Redemption_PVEBookSwipe"
+    ],
+    "post_delay": 2000,
+    "roi": [
+      98,
+      656,
+      66,
+      32
+    ],
+    "expected": [
+      "抽抽乐"
+    ],
+    "target": [
+      1111,
+      650,
+      0,
+      0
+    ],
+    "doc": "识别左下抽抽乐-主页-点击选择章节"
+  },
+  "Redemption_PVEBookSwipe": {
+    "recognition": "OCR",
+    "action": "Swipe",
+    "next": [
+      "Redemption_TouchPVEBook"
+    ],
+    "post_delay": 1000,
+    "roi": [
+      118,
+      505,
+      95,
+      42
+    ],
+    "expected": [
+      "活动游戏卡"
+    ],
+    "begin": [
+      1400,
+      300,
+      0,
+      0
+    ],
+    "end": [
+      1400,
+      700,
+      0,
+      0
+    ],
+    "doc": "识别活动游戏卡-上划"
+  },
+  "Redemption_TouchPVEBook": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "next": [
+      "Redemption_FinBackMapPage"
+    ],
+    "post_delay": 5000,
+    "focus": "PM.复位用卡带已找到",
+    "roi": [
+      405,
+      157,
+      78,
+      38
+    ],
+    "template": [
+      "pve2.png"
+    ],
+    "doc": "点击PVE本子2"
+  },
+  "Redemption_FinBackMapPage": {
+    "recognition": "TemplateMatch",
+    "next": [
+      "Redemption_Evil_Redemption_End"
+    ],
+    "focus": "PM.PVP复位完成，结束~",
+    "roi": [
+      1122,
+      646,
+      40,
+      38
+    ],
+    "template": [
+      "pin.png"
+    ],
+    "doc": "识别右下图钉-章节主页"
+  },
+  "Redemption_Evil_Redemption_End": {}
+}

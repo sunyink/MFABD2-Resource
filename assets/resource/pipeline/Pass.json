@@ -44,12 +44,6 @@
     ],
     "post_delay": 2000,
     "focus": "G=0.页面预期内，普通启动。BM.箱庭地图pin已确认",
-    "target": [
-      1186,
-      46,
-      0,
-      0
-    ],
     "roi": [
       1108,
       637,
@@ -58,6 +52,12 @@
     ],
     "template": [
       "pin.png"
+    ],
+    "target": [
+      1186,
+      46,
+      0,
+      0
     ]
   },
   "Pass_HomePageHub2": {

@@ -19,7 +19,7 @@
       "StartGame_TouchStart",
       "StartGame_PayFaild"
     ],
-    "post_delay": 50000,
+    "post_delay": 10000,
     "focus": "NEO",
     "roi": [
       530,
@@ -38,9 +38,10 @@
       "StartGame_Update",
       "StartGame_UpdateDate",
       "StartGame_PayFaild",
-      "StartGame_TouchStart"
+      "StartGame_TouchStart",
+      "StartGame_LoadingPage"
     ],
-    "post_delay": 50000,
+    "post_delay": 10000,
     "pre_wait_freezes": 3000,
     "focus": "SM.main",
     "roi": [
@@ -247,7 +248,7 @@
       "StartGame_TouchStart",
       "StartGame_LoadingPage"
     ],
-    "post_delay": 50000,
+    "post_delay": 15000,
     "focus": "SM.ORC游戏启动中",
     "roi": [
       820,
@@ -289,10 +290,10 @@
     ],
     "post_delay": 3000,
     "roi": [
-      475,
-      374,
-      319,
-      100
+      572,
+      385,
+      135,
+      58
     ],
     "expected": [
       "确认"
@@ -313,13 +314,13 @@
     "post_wait_freezes": 2000,
     "focus": "SM.TO Touch",
     "roi": [
-      780,
+      782,
+      397,
       394,
-      420,
-      187
+      179
     ],
     "expected": [
-      "TO"
+      "OUCH"
     ],
     "target": [
       490,
@@ -748,6 +749,7 @@
     "recognition": "TemplateMatch",
     "action": "Click",
     "next": [],
+    "timeout": 8000,
     "post_delay": 1000,
     "focus": "SM.宠物派遣",
     "roi": [
