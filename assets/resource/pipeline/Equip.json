@@ -184,7 +184,8 @@
     "recognition": "OCR",
     "action": "Click",
     "next": [
-      "Equip_ToEquipGui"
+      "Equip_ToEquipGui",
+      "Equip_EquipMakeBack"
     ],
     "post_delay": 1000,
     "focus": "EM.装备制作.返回",
@@ -285,7 +286,8 @@
     "doc": "点击N"
   },
   "Equip_EquipUpSelect": {
-    "recognition": "TemplateMatch",
+    "recognition": "ColorMatch",
+    "focus": "EM.色核通过，强化N",
     "action": "Click",
     "next": [
       "Equip_EquipUpSelect2",
@@ -298,10 +300,21 @@
       139,
       84
     ],
-    "template": [
-      "N2.png"
+    "count": 50,
+    "lower": [
+      [
+        72,
+        129,
+        86
+      ]
     ],
-    "threshold": 0.99,
+    "upper": [
+      [
+        164,
+        239,
+        176
+      ]
+    ],
     "target": [
       1164,
       660,
@@ -333,7 +346,8 @@
     "recognition": "OCR",
     "action": "Click",
     "next": [
-      "Equip_EquipDec"
+      "Equip_EquipDec",
+      "Equip_EquipUpResult"
     ],
     "post_delay": 3000,
     "roi": [
@@ -393,7 +407,7 @@
       "Equip_EquipDecSelect",
       "Equip_EquipDecSelectN"
     ],
-    "post_delay": 1000,
+    "post_delay": 1500,
     "roi": [
       775,
       215,
@@ -406,7 +420,8 @@
     "doc": "点击N"
   },
   "Equip_EquipDecSelect": {
-    "recognition": "TemplateMatch",
+    "recognition": "ColorMatch",
+    "focus": "EM.色核通过，分解N",
     "action": "Click",
     "next": [
       "Equip_EquipDecSelect2",
@@ -419,10 +434,21 @@
       111,
       68
     ],
-    "template": [
-      "N2.png"
+    "count": 50,
+    "lower": [
+      [
+        72,
+        129,
+        86
+      ]
     ],
-    "threshold": 0.99,
+    "upper": [
+      [
+        164,
+        239,
+        176
+      ]
+    ],
     "target": [
       1167,
       660,
@@ -454,7 +480,8 @@
     "recognition": "OCR",
     "action": "Click",
     "next": [
-      "Equip_filter"
+      "Equip_filter",
+      "Equip_EquipDecResult"
     ],
     "post_delay": 3000,
     "roi": [
@@ -472,9 +499,10 @@
     "recognition": "TemplateMatch",
     "action": "Click",
     "next": [
-      "Equip_filterSR"
+      "Equip_filterSR",
+      "Equip_filter"
     ],
-    "post_delay": 1000,
+    "post_delay": 2000,
     "focus": "EM.装备精炼",
     "roi": [
       1096,
@@ -492,9 +520,11 @@
     "recognition": "TemplateMatch",
     "action": "Click",
     "next": [
-      "Equip_filter+9"
+      "Equip_SRColorCk",
+      "Equip_URColorCk",
+      "Equip_filterSR"
     ],
-    "post_delay": 1000,
+    "post_delay": 1500,
     "focus": "EM.装备精炼.稀有度",
     "roi": [
       243,
@@ -508,13 +538,70 @@
     "threshold": 0.8,
     "doc": "点击筛选"
   },
+  "Equip_SRColorCk": {
+    "recognition": "ColorMatch",
+    "next": [
+      "Equip_filter+9"
+    ],
+    "focus": "EM.色核通过.稀有度SR",
+    "roi": [
+      451,
+      396,
+      67,
+      39
+    ],
+    "count": 50,
+    "lower": [
+      [
+        85,
+        64,
+        85
+      ]
+    ],
+    "upper": [
+      [
+        229,
+        172,
+        255
+      ]
+    ]
+  },
+  "Equip_URColorCk": {
+    "recognition": "ColorMatch",
+    "next": [
+      "Equip_filter+9"
+    ],
+    "focus": "EM.色核通过.稀有度UR",
+    "roi": [
+      556,
+      403,
+      38,
+      26
+    ],
+    "count": 500,
+    "lower": [
+      [
+        19,
+        41,
+        63
+      ]
+    ],
+    "upper": [
+      [
+        249,
+        255,
+        255
+      ]
+    ]
+  },
   "Equip_filter+9": {
     "recognition": "FeatureMatch",
     "action": "Click",
     "next": [
-      "Equip_filterON"
+      "Equip_+9ColorCk",
+      "Equip_filter+9"
     ],
-    "post_delay": 1000,
+    "post_delay": 1500,
     "focus": "EM.装备精炼.+9",
     "roi": [
       236,
@@ -532,6 +619,33 @@
       228,
       0,
       0
+    ]
+  },
+  "Equip_+9ColorCk": {
+    "next": [
+      "Equip_filterON"
+    ],
+    "focus": "EM.色核通过.+9",
+    "roi": [
+      942,
+      216,
+      55,
+      28
+    ],
+    "count": 50,
+    "lower": [
+      [
+        102,
+        102,
+        122
+      ]
+    ],
+    "upper": [
+      [
+        160,
+        160,
+        160
+      ]
     ]
   },
   "Equip_filterON": {
@@ -593,7 +707,8 @@
     "recognition": "OCR",
     "action": "Click",
     "next": [
-      "Equip_TouchRefiningBack"
+      "Equip_TouchRefiningBack",
+      "Equip_TouchRefining"
     ],
     "post_delay": 3000,
     "focus": "EM.装备精炼.再确认精炼",
@@ -612,7 +727,8 @@
     "recognition": "OCR",
     "action": "Click",
     "next": [
-      "Equip_FinEquip"
+      "Equip_FinEquip",
+      "Equip_TouchRefiningBack"
     ],
     "post_delay": 3000,
     "roi": [

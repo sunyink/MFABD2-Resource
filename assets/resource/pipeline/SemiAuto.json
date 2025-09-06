@@ -1,0 +1,455 @@
+{
+  "SemiAuto_HomePage": {
+    "next": [
+      "SemiAuto_TotalStart"
+    ]
+  },
+  "SemiAuto_TotalStart": {
+    "next": [
+      "SemiAuto_Evil_SemiautoTower_Start"
+    ]
+  },
+  "SemiAuto_HomePageHub": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "next": [],
+    "post_delay": 2000,
+    "focus": "G=0.页面预期内，普通启动。M.箱庭地图run已确认",
+    "roi": [
+      1047,
+      516,
+      107,
+      110
+    ],
+    "template": [
+      "Run.png"
+    ],
+    "green_mask": true,
+    "target": [
+      1186,
+      46,
+      0,
+      0
+    ],
+    "doc": "找到run-点击返回主页"
+  },
+  "SemiAuto_HomePageHub1": {
+    "recognition": "TemplateMatch",
+    "next": [],
+    "post_delay": 2000,
+    "focus": "G=0.页面预期内，普通启动。BM.箱庭地图pin已确认",
+    "roi": [
+      1108,
+      637,
+      65,
+      57
+    ],
+    "template": [
+      "pin.png"
+    ]
+  },
+  "SemiAuto_HomePageHub2": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "next": [],
+    "post_delay": 2000,
+    "focus": "G=1.页面非预期，点击返回按钮",
+    "roi": [
+      1,
+      1,
+      231,
+      124
+    ],
+    "template": [
+      "BackButGe.png",
+      "BackButGe2.png"
+    ],
+    "green_mask": true,
+    "replace": [],
+    "doc": "其他页面，返回按钮"
+  },
+  "SemiAuto_Evil_SemiautoTower_Start": {
+    "next": [
+      "SemiAuto_Evil_SemiautoTower_On"
+    ]
+  },
+  "SemiAuto_HomePage2": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "SemiAuto_MoreBook_Evil",
+      "SemiAuto_HomePageSwipe"
+    ],
+    "focus": "PM.主页面",
+    "roi": [
+      98,
+      656,
+      66,
+      32
+    ],
+    "expected": [
+      "抽抽乐"
+    ],
+    "target": [
+      1111,
+      650,
+      0,
+      0
+    ],
+    "doc": "识别左下抽抽乐-主页-点击选择章节"
+  },
+  "SemiAuto_HomePageSwipe": {
+    "recognition": "OCR",
+    "action": "Swipe",
+    "next": [
+      "SemiAuto_MoreBook_Evil"
+    ],
+    "pre_delay": 1000,
+    "focus": "PM.卡带界面垂直复位(一次性)",
+    "roi": [
+      99,
+      78,
+      212,
+      630
+    ],
+    "expected": [
+      "角色游戏卡"
+    ],
+    "begin": [
+      70,
+      640,
+      0,
+      0
+    ],
+    "end": [
+      70,
+      270,
+      0,
+      0
+    ],
+    "duration": 500
+  },
+  "SemiAuto_MoreBook_Evil": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "SemiAuto_Evil_Move"
+    ],
+    "post_delay": 8000,
+    "focus": "PM.More卡带",
+    "roi": [
+      392,
+      469,
+      98,
+      40
+    ],
+    "threshold": 0.9,
+    "expected": [
+      "挑战"
+    ],
+    "target_offset": [
+      0,
+      -100,
+      0,
+      0
+    ],
+    "doc": "点击More本子"
+  },
+  "SemiAuto_Evil_Move": {
+    "action": "LongPress",
+    "focus": "MM.向上行走。BM.箱庭地图pin确认",
+    "roi": [
+      1108,
+      637,
+      65,
+      57
+    ],
+    "template": [
+      "pin.png"
+    ],
+    "target": [
+      651,
+      171,
+      0,
+      0
+    ],
+    "duration": 5000
+  },
+  "SemiAuto_Evil_SemiautoTower_On": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "SemiAuto_Evil_SemiautoTower_OnCk"
+    ],
+    "roi": [
+      1043,
+      636,
+      118,
+      38
+    ],
+    "expected": [
+      "进入第"
+    ]
+  },
+  "SemiAuto_Evil_SemiautoTower_OnCk": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "SemiAuto_Evil_SemiautoTower_InManual",
+      "SemiAuto_Evil_SemiautoTower_InAuto",
+      "SemiAuto_Evil_SemiautoTower_OnCk"
+    ],
+    "post_delay": 5000,
+    "roi": [
+      676,
+      403,
+      93,
+      39
+    ],
+    "expected": [
+      "确认"
+    ]
+  },
+  "SemiAuto_Evil_SemiautoTower_InManual": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "SemiAuto_Evil_SemiautoTower_InAuto",
+      "SemiAuto_Evil_SemiautoTower_InManual"
+    ],
+    "post_delay": 3500,
+    "roi": [
+      1035,
+      624,
+      81,
+      45
+    ],
+    "expected": [
+      "URN"
+    ],
+    "target": [
+      1017,
+      43,
+      0,
+      0
+    ]
+  },
+  "SemiAuto_Evil_SemiautoTower_InAuto": {
+    "recognition": "OCR",
+    "next": [
+      "SemiAuto_Evil_SemiautoTower_ToNextRound",
+      "SemiAuto_Evil_SemiautoTower_InAuto",
+      "SemiAuto_Evil_SemiautoTower_Defeat"
+    ],
+    "post_delay": 10000,
+    "roi": [
+      50,
+      582,
+      139,
+      54
+    ],
+    "expected": [
+      "自动战斗中"
+    ]
+  },
+  "SemiAuto_Evil_SemiautoTower_ToNextRound": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "SemiAuto_Evil_SemiautoTower_OnCk"
+    ],
+    "post_delay": 500,
+    "roi": [
+      1054,
+      654,
+      133,
+      36
+    ],
+    "expected": [
+      "前往下一层"
+    ]
+  },
+  "SemiAuto_Evil_SemiautoTower_OnCk2": {
+    "recognition": "OCR",
+    "action": "Click",
+    "post_delay": 5000,
+    "roi": [
+      676,
+      403,
+      93,
+      39
+    ],
+    "expected": [
+      "确认"
+    ]
+  },
+  "SemiAuto_Evil_SemiautoTower_Defeat": {
+    "recognition": "OCR",
+    "action": "Click",
+    "roi": [
+      680,
+      632,
+      93,
+      42
+    ],
+    "expected": [
+      "重新挑战"
+    ],
+    "target": [
+      569,
+      650,
+      0,
+      0
+    ]
+  },
+  "SemiAuto_Evil_SemiautoTower_End": {
+    "next": [
+      "SemiAuto_LastNight_Start"
+    ]
+  },
+  "SemiAuto_LastNight_Start": {
+    "next": [
+      "SemiAuto_LastNight_MenuPage",
+      "SemiAuto_LastNight_ReButt",
+      "SemiAuto_LastNight_Ind"
+    ]
+  },
+  "SemiAuto_LastNight_Ind": {
+    "recognition": "OCR",
+    "next": [
+      "SemiAuto_LastNight_Move"
+    ],
+    "roi": [
+      221,
+      50,
+      212,
+      100
+    ],
+    "expected": [
+      "最高伤害",
+      "战斗分布"
+    ]
+  },
+  "SemiAuto_LastNight_Move": {
+    "recognition": "TemplateMatch",
+    "action": "LongPress",
+    "next": [
+      "SemiAuto_LastNight_MenuPage"
+    ],
+    "focus": "SM.向上行走。BM.箱庭地图pin确认",
+    "roi": [
+      1108,
+      637,
+      65,
+      57
+    ],
+    "template": [
+      "pin.png"
+    ],
+    "target": [
+      765,
+      316,
+      0,
+      0
+    ],
+    "duration": 5000
+  },
+  "SemiAuto_LastNight_MenuPage": {
+    "recognition": "OCR",
+    "next": [
+      "SemiAuto_LastNight_GoBattle"
+    ],
+    "post_delay": 1000,
+    "roi": [
+      182,
+      11,
+      206,
+      66
+    ],
+    "expected": [
+      "末日之书"
+    ]
+  },
+  "SemiAuto_LastNight_GoBattle": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "SemiAuto_LastNight_InBattle",
+      "SemiAuto_LastNight_GoBattle"
+    ],
+    "post_delay": 1000,
+    "roi": [
+      980,
+      629,
+      150,
+      44
+    ],
+    "expected": [
+      "去战斗"
+    ]
+  },
+  "SemiAuto_LastNight_InBattle": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "SemiAuto_LastNight_ReButt",
+      "SemiAuto_LastNight_InBattle"
+    ],
+    "post_delay": 5000,
+    "roi": [
+      45,
+      603,
+      252,
+      98
+    ],
+    "expected": [
+      "20次中",
+      "还剩",
+      "次攻击中"
+    ],
+    "target": [
+      1017,
+      40,
+      0,
+      0
+    ]
+  },
+  "SemiAuto_LastNight_ReButt": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "SemiAuto_LastNight_ReCk"
+    ],
+    "post_delay": 500,
+    "roi": [
+      868,
+      653,
+      128,
+      37
+    ],
+    "expected": [
+      "重新挑战"
+    ]
+  },
+  "SemiAuto_LastNight_ReCk": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "SemiAuto_LastNight_InBattle",
+      "SemiAuto_LastNight_ReCk"
+    ],
+    "on_error": [
+      "SemiAuto_LastNight_End"
+    ],
+    "roi": [
+      666,
+      402,
+      112,
+      38
+    ],
+    "expected": [
+      "确认"
+    ]
+  },
+  "SemiAuto_LastNight_End": {}
+}

@@ -277,7 +277,8 @@
     "recognition": "OCR",
     "action": "Click",
     "next": [
-      "GetReward_Busin_GiftGet"
+      "GetReward_Busin_GiftGet",
+      "GetReward_Busin_NoGift"
     ],
     "post_delay": 8000,
     "roi": [
@@ -293,6 +294,7 @@
   },
   "GetReward_Busin_GiftGet": {
     "recognition": "TemplateMatch",
+    "focus": "GBM.圣石发现",
     "action": "Click",
     "next": [
       "GetReward_Busin_GiftGet",
@@ -316,6 +318,22 @@
       0
     ],
     "doc": "点击常客位置，获取水晶。"
+  },
+  "GetReward_Busin_NoGift": {
+    "recognition": "OCR",
+    "focus": "GBM.无圣石情况",
+    "next": [
+      "GetReward_Busin_BackPVEPage"
+    ],
+    "roi": [
+      88,
+      185,
+      85,
+      96
+    ],
+    "expected": [
+      "常客"
+    ]
   },
   "GetReward_Busin_Back": {
     "action": "Click",

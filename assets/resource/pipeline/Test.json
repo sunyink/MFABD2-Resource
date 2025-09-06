@@ -1,12 +1,150 @@
 {
   "Test_HomePage": {
-    "recognition": "TemplateMatch",
-    "focus": "测试",
-    "template": [
-      "RglikeGouGe.png"
+    "next": [
+      "Test_filterSR"
     ],
-    "green_mask": true,
-    "connected": false,
-    "doc": "PVE点击技能1。next暴力修改：因无物品可吸取不会消耗次数，故两个吸取技能连续使用；且缩减延迟。"
+    "focus": "测试1",
+    "template": [
+      "debug.png"
+    ],
+    "method": 1,
+    "doc": "。"
+  },
+  "Test_filterSR": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "next": [
+      "Test_filter+9"
+    ],
+    "post_delay": 1000,
+    "focus": "EM.装备精炼.稀有度",
+    "roi": [
+      232,
+      371,
+      411,
+      81
+    ],
+    "template": [
+      "filterSR.png"
+    ],
+    "method": 1,
+    "doc": "点击筛选"
+  },
+  "Test_filter+9": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [],
+    "post_delay": 1000,
+    "focus": "EM.装备精炼.+9",
+    "roi": [
+      236,
+      161,
+      817,
+      284
+    ],
+    "method": 4,
+    "count": 12,
+    "lower": [
+      56,
+      55,
+      84
+    ],
+    "upper": [
+      222,
+      172,
+      255
+    ],
+    "target": [
+      966,
+      228,
+      0,
+      0
+    ]
+  },
+  "Test_ccc": {
+    "recognition": "ColorMatch",
+    "action": "Click",
+    "roi": [
+      451,
+      396,
+      67,
+      39
+    ],
+    "count": 50,
+    "lower": [
+      [
+        85,
+        64,
+        85
+      ]
+    ],
+    "upper": [
+      [
+        229,
+        172,
+        255
+      ]
+    ]
+  },
+  "Test_ddd": {
+    "recognition": "ColorMatch",
+    "action": "Click",
+    "roi": [
+      556,
+      403,
+      38,
+      26
+    ],
+    "count": 500,
+    "lower": [
+      [
+        19,
+        41,
+        63
+      ]
+    ],
+    "upper": [
+      [
+        249,
+        255,
+        255
+      ]
+    ]
+  },
+  "Test_999": {
+    "recognition": "ColorMatch",
+    "action": "Click",
+    "roi": [
+      942,
+      216,
+      55,
+      28
+    ],
+    "count": 50,
+    "lower": [
+      [
+        102,
+        102,
+        122
+      ]
+    ],
+    "upper": [
+      [
+        160,
+        160,
+        160
+      ]
+    ]
+  },
+  "UR": {
+    "roi": [
+      548,
+      399,
+      55,
+      34
+    ],
+    "template": [
+      "filterUR.png"
+    ]
   }
 }

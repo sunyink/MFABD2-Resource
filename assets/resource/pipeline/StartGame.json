@@ -4,6 +4,8 @@
     "next": [
       "StartGame_Logo",
       "StartGame_LinkError",
+      "StartGame_Error_API",
+      "StartGame_Error_AM",
       "StartGame_LoadingPage"
     ],
     "post_delay": 8000,
@@ -39,7 +41,9 @@
       "StartGame_UpdateDate",
       "StartGame_PayFaild",
       "StartGame_TouchStart",
-      "StartGame_LoadingPage"
+      "StartGame_LoadingPage",
+      "StartGame_Error_API",
+      "StartGame_Error_AM"
     ],
     "post_delay": 10000,
     "pre_wait_freezes": 3000,
@@ -85,10 +89,10 @@
     "post_delay": 8000,
     "focus": "更新确定按钮",
     "roi": [
-      574,
-      435,
-      127,
-      30
+      487,
+      400,
+      318,
+      103
     ],
     "expected": [
       "确认"
@@ -307,7 +311,10 @@
       "StartGame_TouchStart",
       "StartGame_MapPage",
       "StartGame_PVPSet",
-      "StartGame_BackMapPage"
+      "StartGame_Special",
+      "StartGame_BackMapPage",
+      "StartGame_NewChar",
+      "StartGame_DaliyBanner"
     ],
     "pre_delay": 5000,
     "post_delay": 20000,
@@ -795,6 +802,52 @@
     ],
     "expected": [
       "确认"
+    ]
+  },
+  "StartGame_Error_API": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "StartGame_LoadingPage"
+    ],
+    "focus": "ERROR：API。特殊错误，请检查。",
+    "roi": [
+      452,
+      250,
+      375,
+      218
+    ],
+    "expected": [
+      "API服务器连线发生错误",
+      "登录失败"
+    ],
+    "target": [
+      640,
+      429,
+      0,
+      0
+    ]
+  },
+  "StartGame_Error_AM": {
+    "recognition": "OCR",
+    "focus": "ERROR：服务端停机公告。特殊错误，请检查。",
+    "expected": [
+      "无法连接和使用游戏",
+      "定期维护和更新",
+      "公告事项"
+    ]
+  },
+  "StartGame_Special": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "StartGame_MapPage",
+      "StartGame_Special"
+    ],
+    "focus": "特殊页面，尝试消除。",
+    "expected": [
+      "赛季奖励",
+      "奖励已发放至"
     ]
   }
 }

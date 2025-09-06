@@ -1,0 +1,873 @@
+{
+  "Weekly_HomePage": {
+    "next": [
+      "Weekly_WeeklySelector",
+      "Weekly_Freselector"
+    ]
+  },
+  "Weekly_WeeklySelector": {
+    "next": [
+      "Weekly_TotalStart"
+    ]
+  },
+  "Weekly_Freselector": {
+    "next": [
+      "Weekly_TotalStart"
+    ]
+  },
+  "Weekly_TotalStart": {
+    "next": [
+      "Weekly_LastNight_Start"
+    ]
+  },
+  "Weekly_HomePageHub0": {
+    "recognition": "TemplateMatch",
+    "next": [
+      "Weekly_HomePageHub",
+      "Weekly_HomePageHub1",
+      "Weekly_HomePageHub2"
+    ],
+    "focus": "WB.恢复到主界面"
+  },
+  "Weekly_HomePageHub": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "post_delay": 2000,
+    "focus": "G=0.页面预期内，普通启动。M.箱庭地图run已确认",
+    "roi": [
+      1047,
+      516,
+      107,
+      110
+    ],
+    "template": [
+      "Run.png"
+    ],
+    "green_mask": true,
+    "target": [
+      1186,
+      46,
+      0,
+      0
+    ],
+    "doc": "找到run-点击返回主页"
+  },
+  "Weekly_HomePageHub1": {
+    "recognition": "TemplateMatch",
+    "post_delay": 2000,
+    "focus": "G=0.页面预期内，普通启动。BM.箱庭地图pin已确认",
+    "roi": [
+      1108,
+      637,
+      65,
+      57
+    ],
+    "template": [
+      "pin.png"
+    ]
+  },
+  "Weekly_HomePageHub2": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "post_delay": 2000,
+    "focus": "G=1.页面非预期，点击返回按钮",
+    "roi": [
+      1,
+      1,
+      231,
+      124
+    ],
+    "template": [
+      "BackButGe.png",
+      "BackButGe2.png"
+    ],
+    "green_mask": true,
+    "replace": [],
+    "doc": "其他页面，返回按钮"
+  },
+  "Weekly_LastNight_Start": {
+    "next": [
+      "Weekly_LastNight_Ind",
+      "Weekly_LastNight_HomePage"
+    ],
+    "interrupt": [
+      "Weekly_HomePageHub",
+      "Weekly_HomePageHub2",
+      "Weekly_HomePageHub1"
+    ]
+  },
+  "Weekly_LastNight_HomePage": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "Weekly_MoreBook_LastNight",
+      "Weekly_LastNight_HomePageSwipe"
+    ],
+    "focus": "PM.主页面",
+    "roi": [
+      98,
+      656,
+      66,
+      32
+    ],
+    "expected": [
+      "抽抽乐"
+    ],
+    "target": [
+      1111,
+      650,
+      0,
+      0
+    ],
+    "doc": "识别左下抽抽乐-主页-点击选择章节"
+  },
+  "Weekly_LastNight_HomePageSwipe": {
+    "recognition": "OCR",
+    "action": "Swipe",
+    "next": [
+      "Weekly_MoreBook_LastNight",
+      "Weekly_LastNight_HomePageSwipe"
+    ],
+    "pre_delay": 1000,
+    "focus": "PM.卡带界面垂直复位(一次性)",
+    "roi": [
+      99,
+      78,
+      212,
+      630
+    ],
+    "expected": [
+      "角色游戏卡"
+    ],
+    "begin": [
+      70,
+      640,
+      0,
+      0
+    ],
+    "end": [
+      70,
+      270,
+      0,
+      0
+    ],
+    "duration": 500
+  },
+  "Weekly_LastNight_Ind": {
+    "recognition": "OCR",
+    "next": [
+      "Weekly_LastNight_Move"
+    ],
+    "roi": [
+      221,
+      50,
+      212,
+      100
+    ],
+    "expected": [
+      "最高伤害",
+      "战斗分布"
+    ]
+  },
+  "Weekly_MoreBook_LastNight": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "Weekly_LastNight_Move",
+      "Weekly_MoreBook_LastNight"
+    ],
+    "post_delay": 8000,
+    "focus": "PM.More卡带",
+    "roi": [
+      811,
+      237,
+      159,
+      408
+    ],
+    "threshold": 0.9,
+    "expected": [
+      "混战"
+    ],
+    "target_offset": [
+      0,
+      -100,
+      0,
+      0
+    ],
+    "doc": "点击More本子"
+  },
+  "Weekly_LastNight_Move": {
+    "recognition": "TemplateMatch",
+    "action": "LongPress",
+    "next": [
+      "Weekly_LastNight_MenuPage"
+    ],
+    "focus": "MM.向上行走。BM.箱庭地图pin确认",
+    "roi": [
+      1108,
+      637,
+      65,
+      57
+    ],
+    "template": [
+      "pin.png"
+    ],
+    "target": [
+      765,
+      316,
+      0,
+      0
+    ],
+    "duration": 5000
+  },
+  "Weekly_LastNight_MenuPage": {
+    "recognition": "OCR",
+    "next": [
+      "Weekly_LastNight_GoBattle"
+    ],
+    "post_delay": 1000,
+    "roi": [
+      182,
+      11,
+      206,
+      66
+    ],
+    "expected": [
+      "末日之书"
+    ]
+  },
+  "Weekly_LastNight_GoBattle": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "Weekly_LastNight_InBattle",
+      "Weekly_LastNight_GoBattle"
+    ],
+    "post_delay": 1000,
+    "roi": [
+      980,
+      629,
+      150,
+      44
+    ],
+    "expected": [
+      "去战斗"
+    ]
+  },
+  "Weekly_LastNight_InBattle": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "Weekly_LastNight_LeavButt",
+      "Weekly_LastNight_InBattle"
+    ],
+    "post_delay": 5000,
+    "roi": [
+      45,
+      603,
+      252,
+      98
+    ],
+    "expected": [
+      "20次中",
+      "还剩",
+      "次攻击中"
+    ],
+    "target": [
+      1017,
+      40,
+      0,
+      0
+    ]
+  },
+  "Weekly_LastNight_LeavButt": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "Weekly_LastNight_MaybeNew",
+      "Weekly_LastNight_MenuPageEnd",
+      "Weekly_LastNight_BackPVEPage",
+      "Weekly_LastNight_LeavButt"
+    ],
+    "post_delay": 1500,
+    "roi": [
+      1060,
+      654,
+      122,
+      38
+    ],
+    "expected": [
+      "离开"
+    ]
+  },
+  "Weekly_LastNight_MaybeNew": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "Weekly_LastNight_MenuPageEnd",
+      "Weekly_LastNight_HomePageHub2",
+      "Weekly_LastNight_BackPVEPage",
+      "Weekly_LastNight_MaybeNew"
+    ],
+    "post_delay": 1000,
+    "roi": [
+      736,
+      146,
+      400,
+      422
+    ],
+    "expected": [
+      "创造新纪录",
+      "最高伤害"
+    ]
+  },
+  "Weekly_LastNight_MenuPageEnd": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "Weekly_LastNight_HomePageHub2",
+      "Weekly_LastNight_MenuPageEnd",
+      "Weekly_LastNight_BackPVEPage"
+    ],
+    "roi": [
+      189,
+      5,
+      280,
+      194
+    ],
+    "expected": [
+      "末日之书"
+    ],
+    "target": [
+      120,
+      35,
+      0,
+      0
+    ]
+  },
+  "Weekly_LastNight_HomePageHub2": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "next": [
+      "Weekly_LastNight_BackPVEPage",
+      "Weekly_LastNight_HomePageHub2"
+    ],
+    "post_delay": 2000,
+    "focus": "G=1.页面非预期，点击返回按钮",
+    "roi": [
+      1,
+      1,
+      231,
+      124
+    ],
+    "template": [
+      "BackButGe.png",
+      "BackButGe2.png"
+    ],
+    "green_mask": true,
+    "replace": [],
+    "doc": "其他页面，返回按钮"
+  },
+  "Weekly_LastNight_BackPVEPage": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "next": [
+      "Weekly_LastNight_BackHomePage2",
+      "Weekly_LastNight_BackPVEPage"
+    ],
+    "post_delay": 2000,
+    "focus": "WLM.开始离开卡带",
+    "roi": [
+      1122,
+      646,
+      40,
+      38
+    ],
+    "template": [
+      "pin.png"
+    ],
+    "target": [
+      1186,
+      46,
+      0,
+      0
+    ],
+    "doc": "找到图钉-点击返回主页"
+  },
+  "Weekly_LastNight_BackHomePage2": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "Weekly_LastNight_PVEBookSwipe",
+      "Weekly_LastNight_BackHomePage2"
+    ],
+    "post_delay": 2000,
+    "roi": [
+      98,
+      656,
+      66,
+      32
+    ],
+    "expected": [
+      "抽抽乐"
+    ],
+    "target": [
+      1111,
+      650,
+      0,
+      0
+    ],
+    "doc": "识别左下抽抽乐-主页-点击选择章节"
+  },
+  "Weekly_LastNight_PVEBookSwipe": {
+    "recognition": "OCR",
+    "action": "Swipe",
+    "next": [
+      "Weekly_LastNight_TouchPVEBook"
+    ],
+    "roi": [
+      118,
+      505,
+      95,
+      42
+    ],
+    "expected": [
+      "活动游戏卡"
+    ],
+    "begin": [
+      1400,
+      300,
+      0,
+      0
+    ],
+    "end": [
+      1400,
+      700,
+      0,
+      0
+    ],
+    "doc": "识别活动游戏卡-上划"
+  },
+  "Weekly_LastNight_TouchPVEBook": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "next": [
+      "Weekly_LastNight_FinBackMapPage",
+      "Weekly_LastNight_TouchPVEBook"
+    ],
+    "post_delay": 5000,
+    "focus": "PM.复位用卡带已找到",
+    "roi": [
+      405,
+      157,
+      78,
+      38
+    ],
+    "template": [
+      "pve2.png"
+    ],
+    "doc": "点击PVE本子2"
+  },
+  "Weekly_LastNight_FinBackMapPage": {
+    "recognition": "TemplateMatch",
+    "next": [
+      "Weekly_LastNight_End"
+    ],
+    "focus": "WLM.卡带复位完成，结束~",
+    "roi": [
+      1122,
+      646,
+      40,
+      38
+    ],
+    "template": [
+      "pin.png"
+    ],
+    "doc": "识别右下图钉-章节主页"
+  },
+  "Weekly_LastNight_End": {
+    "next": [
+      "Weekly_VisitCabin_Start"
+    ]
+  },
+  "Weekly_VisitCabin_Start": {
+    "next": [
+      "Weekly_VisitCabin_HomePage"
+    ],
+    "focus": "WVM.访问小屋开始",
+    "interrupt": [
+      "Weekly_HomePageHub",
+      "Weekly_HomePageHub2",
+      "Weekly_HomePageHub1"
+    ]
+  },
+  "Weekly_VisitCabin_HomePage": {
+    "recognition": "OCR",
+    "next": [
+      "Weekly_VisitCabin_GoIn",
+      "Weekly_VisitCabin_HomePage"
+    ],
+    "roi": [
+      98,
+      656,
+      66,
+      32
+    ],
+    "expected": [
+      "抽抽乐"
+    ]
+  },
+  "Weekly_VisitCabin_GoIn": {
+    "recognition": "OCR",
+    "focus": "WVM.点击我的小屋",
+    "action": "Click",
+    "next": [
+      "Weekly_VisitCabin_TabChg",
+      "Weekly_VisitCabin_GoIn"
+    ],
+    "post_delay": 8000,
+    "roi": [
+      16,
+      84,
+      455,
+      275
+    ],
+    "expected": [
+      "我的小屋"
+    ],
+    "target_offset": [
+      5,
+      -45,
+      0,
+      0
+    ]
+  },
+  "Weekly_VisitCabin_TabChg": {
+    "recognition": "OCR",
+    "focus": "WVM.进入小屋确认，参观",
+    "action": "Click",
+    "next": [
+      "Weekly_VisitCabin_ModChg",
+      "Weekly_VisitCabin_TabChg"
+    ],
+    "post_delay": 8000,
+    "roi": [
+      154,
+      0,
+      305,
+      125
+    ],
+    "expected": [
+      "我的小屋"
+    ],
+    "target": [
+      136,
+      200,
+      0,
+      0
+    ]
+  },
+  "Weekly_VisitCabin_ModChg": {
+    "recognition": "OCR",
+    "action": "Click",
+    "focus": "WVM.随机mod",
+    "next": [
+      "Weekly_VisitCabin_Like1",
+      "Weekly_VisitCabin_ModChg"
+    ],
+    "roi": [
+      149,
+      0,
+      259,
+      111
+    ],
+    "threshold": 0.6,
+    "expected": [
+      "参观"
+    ],
+    "target": [
+      212,
+      175,
+      0,
+      0
+    ]
+  },
+  "Weekly_VisitCabin_Like1": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "Weekly_VisitCabin_Like1Chg"
+    ],
+    "post_delay": 2000,
+    "roi": [
+      946,
+      597,
+      263,
+      106
+    ],
+    "expected": [
+      "再次探查"
+    ],
+    "target": [
+      1144,
+      94,
+      0,
+      0
+    ]
+  },
+  "Weekly_VisitCabin_Like1Chg": {
+    "action": "Click",
+    "next": [
+      "Weekly_VisitCabin_Like2"
+    ],
+    "post_delay": 8000,
+    "roi": [
+      946,
+      597,
+      263,
+      106
+    ],
+    "expected": [
+      "再次探查"
+    ],
+    "target": [
+      850,
+      658,
+      0,
+      0
+    ]
+  },
+  "Weekly_VisitCabin_Like2": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "Weekly_VisitCabin_Like2Chg"
+    ],
+    "post_delay": 2000,
+    "roi": [
+      946,
+      597,
+      263,
+      106
+    ],
+    "expected": [
+      "再次探查"
+    ],
+    "target": [
+      1144,
+      94,
+      0,
+      0
+    ]
+  },
+  "Weekly_VisitCabin_Like2Chg": {
+    "action": "Click",
+    "next": [
+      "Weekly_VisitCabin_Like3"
+    ],
+    "post_delay": 8000,
+    "roi": [
+      946,
+      597,
+      263,
+      106
+    ],
+    "expected": [
+      "再次探查"
+    ],
+    "target": [
+      850,
+      658,
+      0,
+      0
+    ]
+  },
+  "Weekly_VisitCabin_Like3": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "Weekly_VisitCabin_Like3Chg"
+    ],
+    "post_delay": 2000,
+    "roi": [
+      946,
+      597,
+      263,
+      106
+    ],
+    "expected": [
+      "再次探查"
+    ],
+    "target": [
+      1144,
+      94,
+      0,
+      0
+    ]
+  },
+  "Weekly_VisitCabin_Like3Chg": {
+    "action": "Click",
+    "next": [
+      "Weekly_VisitCabin_Like4"
+    ],
+    "post_delay": 8000,
+    "roi": [
+      946,
+      597,
+      263,
+      106
+    ],
+    "expected": [
+      "再次探查"
+    ],
+    "target": [
+      850,
+      658,
+      0,
+      0
+    ]
+  },
+  "Weekly_VisitCabin_Like4": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "Weekly_VisitCabin_LeavToHomePage"
+    ],
+    "interrupt": [
+      "Weekly_HomePageHub",
+      "Weekly_HomePageHub1",
+      "Weekly_HomePageHub2"
+    ],
+    "post_delay": 2000,
+    "roi": [
+      946,
+      597,
+      263,
+      106
+    ],
+    "expected": [
+      "再次探查"
+    ],
+    "target": [
+      1144,
+      94,
+      0,
+      0
+    ]
+  },
+  "Weekly_VisitCabin_LeavToHomePage": {
+    "recognition": "TemplateMatch",
+    "next": [
+      "Weekly_VisitCabin_End"
+    ],
+    "roi": [
+      1047,
+      516,
+      107,
+      110
+    ],
+    "template": [
+      "Run.png"
+    ],
+    "green_mask": true
+  },
+  "Weekly_VisitCabin_End": {
+  	"focus": "WVM.访问小屋结束",
+    "next": [
+      "Weekly_Arcade_Start"
+    ]
+  },
+  "Weekly_Arcade_Start": {
+    "next": [
+      "Weekly_Arcade_HomePage"
+    ],
+    "focus": "WAM.访问街机开始",
+    "interrupt": [
+      "Weekly_HomePageHub",
+      "Weekly_HomePageHub1",
+      "Weekly_HomePageHub2"
+    ]
+  },
+  "Weekly_Arcade_HomePage": {
+    "recognition": "OCR",
+    "next": [
+      "Weekly_Arcade_GoIn"
+    ],
+    "post_delay": 3000,
+    "roi": [
+      98,
+      656,
+      66,
+      32
+    ],
+    "expected": [
+      "抽抽乐"
+    ]
+  },
+  "Weekly_Arcade_GoIn": {
+    "recognition": "OCR",
+    "focus": "WAM.点击街机图标",
+    "action": "Click",
+    "next": [
+      "Weekly_Arcade_InCk",
+      "Weekly_Arcade_GoIn"
+    ],
+    "roi": "Weekly_VisitCabin_GoIn",
+    "expected": [
+      "街机游戏"
+    ],
+    "target_offset": [
+      5,
+      -45,
+      0,
+      0
+    ]
+  },
+  "Weekly_Arcade_InCk": {
+    "recognition": "OCR",
+    "focus": "WAM.街机已进入",
+    "next": [
+      "Weekly_Arcade_LeavToHomePage"
+    ],
+    "interrupt": [
+      "Weekly_HomePageHub",
+      "Weekly_HomePageHub1",
+      "Weekly_HomePageHub2"
+    ],
+    "roi": [
+      171,
+      12,
+      222,
+      68
+    ],
+    "expected": [
+      "街机游戏"
+    ],
+    "target_offset": [
+      3,
+      -3,
+      0,
+      0
+    ]
+  },
+  "Weekly_Arcade_LeavToHomePage": {
+    "recognition": "TemplateMatch",
+    "focus": "WAM.回到庭箱",
+    "next": [
+      "Weekly_Arcade_End"
+    ],
+    "roi": [
+      1047,
+      516,
+      107,
+      110
+    ],
+    "template": [
+      "Run.png"
+    ],
+    "green_mask": true
+  },
+  "Weekly_Arcade_End": {
+  	"focus": "WAM.访问街机结束"
+  	}
+}

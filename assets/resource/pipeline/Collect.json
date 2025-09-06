@@ -1081,5 +1081,229 @@
       0,
       0
     ]
-  }
+  },
+  "Collect_QuickCart_Start": {
+    "next": [
+      "Collect_QuickCart_FastIcons"
+    ]
+  },
+  "Collect_QuickCart_FastIcons": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "next": [
+      "Collect_QuickCart_FastUI",
+      "Collect_QuickCart_FastIcons"
+    ],
+    "post_delay": 1000,
+    "focus": "QCB.进入快速卡带",
+    "template": [
+      "QuickCartGeadai.png"
+    ],
+    "green_mask": true
+  },
+  "Collect_QuickCart_FastUI": {
+    "recognition": "OCR",
+    "focus": "QCB.确认快速卡带",
+    "roi": [
+      32,
+      506,
+      306,
+      125
+    ],
+    "expected": [
+      "最近"
+    ]
+  },
+  "Collect_QuickCart_QC1Sort": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "Collect_QuickCart_QC1"
+    ],
+    "on_error": [
+      "Collect_ChapterSelectionError"
+    ],
+    "post_delay": 2000,
+    "focus": "QCM.快速卡带类选择-1",
+    "roi": [
+      36,
+      527,
+      1104,
+      63
+    ],
+    "expected": [
+      "剧情游戏卡"
+    ]
+  },
+  "Collect_QuickCart_QC1": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "next": [
+      "Collect_QuickCart_QC2Sort"
+    ],
+    "interrupt": [
+      "Collect_OperationsMain_Sandplay"
+    ],
+    "post_delay": 3000,
+    "focus": "QCM.快速卡带-1",
+    "roi": [
+      51,
+      582,
+      873,
+      133
+    ],
+    "template": [
+      "KadaiGe.png"
+    ],
+    "order_by": "Horizontal",
+    "green_mask": true,
+    "target_offset": [
+      -40,
+      30,
+      0,
+      0
+    ]
+  },
+  "Collect_QuickCart_QC2Sort": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "Collect_QuickCart_QC2"
+    ],
+    "on_error": [
+      "Collect_ChapterSelectionError"
+    ],
+    "post_delay": 2000,
+    "focus": "QCM.快速卡带类选择-2",
+    "roi": [
+      36,
+      527,
+      1104,
+      63
+    ],
+    "expected": [
+      "剧情游戏卡"
+    ]
+  },
+  "Collect_QuickCart_QC2": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "next": [
+      "Collect_QuickCart_QC3Sort"
+    ],
+    "interrupt": [
+      "Collect_OperationsMain_Sandplay"
+    ],
+    "post_delay": 3000,
+    "focus": "QCM.快速卡带-2",
+    "roi": [
+      51,
+      582,
+      873,
+      133
+    ],
+    "template": [
+      "KadaiGe.png"
+    ],
+    "order_by": "Horizontal",
+    "green_mask": true,
+    "target_offset": [
+      -40,
+      30,
+      0,
+      0
+    ]
+  },
+  "Collect_QuickCart_QC3Sort": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "Collect_QuickCart_QC3"
+    ],
+    "on_error": [
+      "Collect_ChapterSelectionError"
+    ],
+    "post_delay": 2000,
+    "focus": "QCM.快速卡带类选择-3",
+    "roi": [
+      36,
+      527,
+      1104,
+      63
+    ],
+    "expected": [
+      "剧情游戏卡"
+    ]
+  },
+  "Collect_QuickCart_QC3": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "next": [
+      "Collect_OperationsMain_Sandplay"
+    ],
+    "post_delay": 3000,
+    "focus": "QCM.快速卡带-3",
+    "roi": [
+      51,
+      582,
+      873,
+      133
+    ],
+    "template": [
+      "KadaiGe.png"
+    ],
+    "order_by": "Horizontal",
+    "green_mask": true,
+    "target_offset": [
+      -35,
+      30,
+      0,
+      0
+    ]
+  },
+  "Collect_QuickCart_TargetMapEnd": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "Collect_QuickCart_HomePageHub2"
+    ],
+    "focus": "CCB.快速卡带-卡带内流程进入END环节",
+    "roi": [
+      408,
+      622,
+      466,
+      47
+    ],
+    "expected": [
+      "达雷普旅馆",
+      "雷瓦汀基地救护站",
+      "拉勒凯旅馆",
+      "罗戴夫旅馆",
+      "旅馆",
+      "安全"
+    ]
+  },
+  "Collect_QuickCart_HomePageHub2": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "next": [
+      "Collect_QuickCart_FastIcons"
+    ],
+    "post_delay": 2000,
+    "focus": "G=1.页面非预期，点击返回按钮",
+    "roi": [
+      1,
+      1,
+      231,
+      124
+    ],
+    "template": [
+      "BackButGe.png",
+      "BackButGe2.png"
+    ],
+    "green_mask": true,
+    "replace": [],
+    "doc": "其他页面，返回按钮"
+  },
+  "Collect_QuickCart_End": {}
 }

@@ -120,7 +120,7 @@
       483
     ],
     "expected": [
-      "活动任务"
+      "活动"
     ],
     "doc": "识别抽卡页"
   },
@@ -131,6 +131,7 @@
       "Activities_GetAll",
       "Activities_GetBorn",
       "Activities_GetRoll",
+      "Activities_GetPinTu",
       "Activities_NoFindAndInEnd"
     ],
     "on_error": [
@@ -148,6 +149,7 @@
       "ActivePeerGe.png",
       "ActiveGe.png"
     ],
+    "threshold": 0.8,
     "green_mask": true,
     "target_offset": [
       -50,
@@ -168,7 +170,7 @@
       "Activities_Slip"
     ],
     "post_delay": 2000,
-    "focus": "GA.发现活动",
+    "focus": "GA.发现活动-常规",
     "roi": [
       544,
       527,
@@ -304,6 +306,29 @@
     ],
     "expected": [
       "确认"
+    ],
+    "doc": "点击右下抽卡"
+  },
+  "Activities_GetPinTu": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "Activities_GetAllRe",
+      "Activities_Index"
+    ],
+    "on_error": [
+      "Activities_Slip"
+    ],
+    "post_delay": 2000,
+    "focus": "GA.发现活动-拼图",
+    "roi": [
+      1002,
+      514,
+      120,
+      49
+    ],
+    "expected": [
+      "全部解锁"
     ],
     "doc": "点击右下抽卡"
   },

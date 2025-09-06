@@ -147,6 +147,7 @@
     "next": [
       "Redemption_Mapck",
       "Redemption_Mapck1",
+      "Redemption_Evil_Settlement",
       "Redemption_MoreBook_Evil"
     ],
     "post_delay": 8000,
@@ -168,6 +169,24 @@
       0
     ],
     "doc": "点击More本子"
+  },
+  "Redemption_Evil_Settlement": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "Redemption_Mapck",
+      "Redemption_Mapck1",
+      "Redemption_Evil_Settlement"
+    ],
+    "roi": [
+      817,
+      157,
+      191,
+      124
+    ],
+    "expected": [
+      "赛季奖励"
+    ]
   },
   "Redemption_Mapck": {
     "recognition": "TemplateMatch",
