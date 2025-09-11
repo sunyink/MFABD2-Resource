@@ -175,7 +175,9 @@
     "action": "Swipe",
     "next": [
       "Gacha_FindFreeGacha",
+      "Gacha_FindEquRedDot",
       "Gacha_NoFindFreeAndInEnd",
+      "Gacha_FindEquRedDot_PBC",
       "Gacha_Slip"
     ],
     "on_error": [
@@ -214,10 +216,10 @@
     ],
     "focus": "GA.卡池列表见底",
     "roi": [
-      104,
-      325,
-      205,
-      264
+      183,
+      160,
+      176,
+      347
     ],
     "template": [
       "Gachalistend.png"
@@ -460,5 +462,58 @@
       "pin.png"
     ],
     "doc": "识别右下图钉-章节主页"
+  },
+  "Gacha_FindEquRedDot": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "next": [
+      "Gacha_FindFreeGacha",
+      "Gacha_Slip",
+      "Gacha_FindEquRedDot",
+      "Gacha_FindEquRedDot_PBC"
+    ],
+    "focus": "GM.卡池类发现可关注项",
+    "roi": [
+      112,
+      148,
+      66,
+      170
+    ],
+    "template": [
+      "GaChaEquRDGE.png"
+    ],
+    "order_by": "Vertical",
+    "green_mask": true,
+    "target_offset": [
+      -5,
+      5,
+      0,
+      0
+    ]
+  },
+  "Gacha_FindEquRedDot_PBC": {
+    "recognition": "TemplateMatch",
+    "action": "Click",
+    "next": [
+      "Gacha_FinGacha"
+    ],
+    "inverse": true,
+    "focus": "GM.反证法-无免费池",
+    "roi": [
+      112,
+      148,
+      66,
+      170
+    ],
+    "template": [
+      "GaChaEquRDGE.png"
+    ],
+    "green_mask": true,
+    "target_offset": [
+      -5,
+      5,
+      0,
+      0
+    ]
   }
 }

@@ -132,6 +132,7 @@
       "Activities_GetBorn",
       "Activities_GetRoll",
       "Activities_GetPinTu",
+      "Activities_GetBingo",
       "Activities_NoFindAndInEnd"
     ],
     "on_error": [
@@ -329,8 +330,29 @@
     ],
     "expected": [
       "全部解锁"
+    ]
+  },
+  "Activities_GetBingo": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "Activities_GetAllRe",
+      "Activities_Index"
     ],
-    "doc": "点击右下抽卡"
+    "on_error": [
+      "Activities_Slip"
+    ],
+    "post_delay": 2000,
+    "focus": "GA.发现活动-bingo V.02509",
+    "roi": [
+      533,
+      518,
+      119,
+      54
+    ],
+    "expected": [
+      "全部解锁"
+    ]
   },
   "Activities_ResultBack": {
     "recognition": "OCR",

@@ -69,7 +69,7 @@
   "Weekly_HomePageHub2": {
     "recognition": "TemplateMatch",
     "action": "Click",
-    "post_delay": 2000,
+    "post_delay": 3000,
     "focus": "G=1.页面非预期，点击返回按钮",
     "roi": [
       1,
@@ -494,12 +494,12 @@
     "next": [
       "Weekly_VisitCabin_HomePage"
     ],
-    "focus": "WVM.访问小屋开始",
     "interrupt": [
       "Weekly_HomePageHub",
       "Weekly_HomePageHub2",
       "Weekly_HomePageHub1"
-    ]
+    ],
+    "focus": "WVM.访问小屋开始"
   },
   "Weekly_VisitCabin_HomePage": {
     "recognition": "OCR",
@@ -519,13 +519,13 @@
   },
   "Weekly_VisitCabin_GoIn": {
     "recognition": "OCR",
-    "focus": "WVM.点击我的小屋",
     "action": "Click",
     "next": [
       "Weekly_VisitCabin_TabChg",
       "Weekly_VisitCabin_GoIn"
     ],
     "post_delay": 8000,
+    "focus": "WVM.点击我的小屋",
     "roi": [
       16,
       84,
@@ -544,13 +544,13 @@
   },
   "Weekly_VisitCabin_TabChg": {
     "recognition": "OCR",
-    "focus": "WVM.进入小屋确认，参观",
     "action": "Click",
     "next": [
       "Weekly_VisitCabin_ModChg",
       "Weekly_VisitCabin_TabChg"
     ],
     "post_delay": 8000,
+    "focus": "WVM.进入小屋确认，参观",
     "roi": [
       154,
       0,
@@ -570,11 +570,11 @@
   "Weekly_VisitCabin_ModChg": {
     "recognition": "OCR",
     "action": "Click",
-    "focus": "WVM.随机mod",
     "next": [
       "Weekly_VisitCabin_Like1",
       "Weekly_VisitCabin_ModChg"
     ],
+    "focus": "WVM.随机mod",
     "roi": [
       149,
       0,
@@ -772,21 +772,21 @@
     "green_mask": true
   },
   "Weekly_VisitCabin_End": {
-  	"focus": "WVM.访问小屋结束",
     "next": [
       "Weekly_Arcade_Start"
-    ]
+    ],
+    "focus": "WVM.访问小屋结束"
   },
   "Weekly_Arcade_Start": {
     "next": [
       "Weekly_Arcade_HomePage"
     ],
-    "focus": "WAM.访问街机开始",
     "interrupt": [
       "Weekly_HomePageHub",
       "Weekly_HomePageHub1",
       "Weekly_HomePageHub2"
-    ]
+    ],
+    "focus": "WAM.访问街机开始"
   },
   "Weekly_Arcade_HomePage": {
     "recognition": "OCR",
@@ -806,13 +806,18 @@
   },
   "Weekly_Arcade_GoIn": {
     "recognition": "OCR",
-    "focus": "WAM.点击街机图标",
     "action": "Click",
     "next": [
       "Weekly_Arcade_InCk",
       "Weekly_Arcade_GoIn"
     ],
-    "roi": "Weekly_VisitCabin_GoIn",
+    "focus": "WAM.点击街机图标",
+    "roi": [
+      240,
+      166,
+      124,
+      109
+    ],
     "expected": [
       "街机游戏"
     ],
@@ -825,15 +830,13 @@
   },
   "Weekly_Arcade_InCk": {
     "recognition": "OCR",
-    "focus": "WAM.街机已进入",
     "next": [
       "Weekly_Arcade_LeavToHomePage"
     ],
     "interrupt": [
-      "Weekly_HomePageHub",
-      "Weekly_HomePageHub1",
       "Weekly_HomePageHub2"
     ],
+    "focus": "WAM.街机已进入",
     "roi": [
       171,
       12,
@@ -852,10 +855,10 @@
   },
   "Weekly_Arcade_LeavToHomePage": {
     "recognition": "TemplateMatch",
-    "focus": "WAM.回到庭箱",
     "next": [
       "Weekly_Arcade_End"
     ],
+    "focus": "WAM.回到庭箱",
     "roi": [
       1047,
       516,
@@ -868,6 +871,6 @@
     "green_mask": true
   },
   "Weekly_Arcade_End": {
-  	"focus": "WAM.访问街机结束"
-  	}
+    "focus": "WAM.访问街机结束"
+  }
 }

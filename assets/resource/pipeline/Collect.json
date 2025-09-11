@@ -948,8 +948,9 @@
     "next": [
       "Collect_ForceTeleporCircleClick2"
     ],
+    "post_delay": 500,
     "target": [
-      1200,
+      1080,
       665,
       0,
       0
@@ -962,6 +963,20 @@
       "Collect_ForceTeleporCircleClick2.1",
       "Collect_ForceTeleporCircleClick2.14"
     ],
+    "interrupt": [
+      "Collect_ForceTeleporCircleClick2.05"
+    ],
+    "post_delay": 5000,
+    "target": [
+      1140,
+      665,
+      0,
+      0
+    ],
+    "doc": "点击Pin2快捷技能栏中的传送技能"
+  },
+  "Collect_ForceTeleporCircleClick2.05": {
+    "action": "Click",
     "post_delay": 5000,
     "target": [
       1012,
@@ -1012,7 +1027,8 @@
     "recognition": "OCR",
     "action": "Click",
     "next": [
-      "Collect_ForceTeleporCircleClick2.2"
+      "Collect_ForceTeleporCircleClick2.2",
+      "Collect_ForceTeleporCircleClick2.15"
     ],
     "post_delay": 5000,
     "roi": [
@@ -1042,7 +1058,7 @@
     "action": "Click",
     "post_delay": 5000,
     "target": [
-      1145,
+      1080,
       665,
       0,
       0
