@@ -100,7 +100,7 @@
     ],
     "post_delay": 3000,
     "pre_wait_freezes": 5000,
-    "focus": "BM.快速狩猎地图已确认",
+    "focus": "BM.快速狩猎地图,默认位置",
     "roi": [
       1029,
       631,
@@ -376,7 +376,8 @@
     "recognition": "OCR",
     "action": "Click",
     "next": [
-      "Battle_FastBattleTouch_StoneSelect"
+      "Battle_CollectMapDongXueCK",
+      "Battle_CollectMapDongXue"
     ],
     "timeout": 3000,
     "focus": "BM.圣石洞穴",
@@ -390,6 +391,21 @@
       "火之洞穴"
     ],
     "doc": "A-3.选择圣石洞穴"
+  },
+  "Battle_CollectMapDongXueCK": {
+    "recognition": "TemplateMatch",
+    "next": [
+      "Battle_FastBattleTouch_StoneSelect"
+    ],
+    "roi": [
+      426,
+      622,
+      70,
+      60
+    ],
+    "template": [
+      "CharactFirepng.png"
+    ]
   },
   "Battle_FastBattleTouch_StoneSelect": {
     "recognition": "OCR",
@@ -413,11 +429,11 @@
     ],
     "target": [
       230,
-      350,
+      120,
       0,
       0
     ],
-    "doc": "寻找火之洞穴，点击属性图_暗"
+    "doc": "寻找火之洞穴，点击属性图_火"
   },
   "Battle_FastBattleMAXTouchDongXue": {
     "recognition": "OCR",
@@ -464,8 +480,10 @@
     "recognition": "OCR",
     "action": "Click",
     "next": [
-      "Battle_FastBattleReward"
+      "Battle_FastBattleReward",
+      "Battle_NoAP"
     ],
+    "timeout": 8000,
     "on_error": [
       "Battle_CollectMapInitializeE"
     ],
@@ -484,6 +502,29 @@
     ],
     "doc": "快速狩猎界面，点击狩猎"
   },
+  "Battle_NoAP": {
+    "recognition": "ColorMatch",
+    "next": [
+      "Battle_CollectMapInitialize"
+    ],
+    "focus": "BB.免费AP不足",
+    "roi": [
+      649,
+      532,
+      133,
+      31
+    ],
+    "lower": [
+      226,
+      201,
+      192
+    ],
+    "upper": [
+      226,
+      201,
+      192
+    ]
+  },
   "Battle_FastBattleReward": {
     "recognition": "OCR",
     "action": "Click",
@@ -491,7 +532,7 @@
       "Battle_CollectMapInitialize"
     ],
     "post_delay": 3000,
-    "focus": "BB.快速狩猎-进入结算-战利品页面返回",
+    "focus": "BB.快速狩猎-结算-战利品页面返回",
     "roi": [
       551,
       623,
@@ -505,13 +546,30 @@
   },
   "Battle_CollectMapInitialize": {
     "action": "Click",
+    "next": [
+      "Battle_CollectMapInitialize_Out",
+      "Battle_CollectMapInitialize"
+    ],
     "post_delay": 3000,
-    "focus": "BB.快速狩猎-进入结算-点击狩猎场序列图标",
+    "focus": "BB.快速狩猎-结算-狩猎地图默认位置",
     "target": [
       140,
       120,
       0,
       0
+    ]
+  },
+  "Battle_CollectMapInitialize_Out": {
+    "recognition": "OCR",
+    "focus": "BB.地图复位确认-默认位置",
+    "roi": [
+      549,
+      338,
+      171,
+      87
+    ],
+    "expected": [
+      "野猪洞穴"
     ]
   },
   "Battle_CollectMapInitializeE": {
@@ -520,7 +578,7 @@
       "Battle_CollectMapInitialize"
     ],
     "post_delay": 3000,
-    "focus": "BB.快速狩猎-异常",
+    "focus": "BB.快速狩猎-异常(点击地图默认位置按钮)",
     "target": [
       140,
       120,
@@ -556,6 +614,7 @@
   },
   "Battle_FinBackMapPage": {
     "recognition": "TemplateMatch",
+    "action": "StopTask",
     "next": [],
     "focus": "BM.流程结束成功",
     "roi": [
@@ -569,5 +628,210 @@
     ],
     "green_mask": true,
     "doc": "识别右下run-章节主页"
+  },
+  "Battle_TurnCharact_Start": {
+    "next": [
+      "Battle_TurnCharact_End"
+    ],
+    "interrupt": [
+      "Battle_TurnCharact_QuickBattleButton"
+    ],
+    "focus": "BTM.洞穴均衡打取圣石开始"
+  },
+  "Battle_TurnCharact_QuickBattleButton": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "Battle_TurnCharact_NoAP",
+      "Battle_TurnCharact_TurnDuo"
+    ],
+    "interrupt": [
+      "Battle_TurnCharact_TurnDuo_Int"
+    ],
+    "post_delay": 1500,
+    "focus": "BTM.快速狩猎-菜单！",
+    "roi": [
+      1006,
+      630,
+      138,
+      39
+    ],
+    "expected": [
+      "快速狩猎"
+    ],
+    "doc": "寻找快速狩猎，点击"
+  },
+  "Battle_TurnCharact_NoAP": {
+    "recognition": "ColorMatch",
+    "next": [
+      "Battle_TurnCharact_CollectMapInitializeE"
+    ],
+    "roi": [
+      649,
+      532,
+      133,
+      31
+    ],
+    "lower": [
+      226,
+      201,
+      192
+    ],
+    "upper": [
+      226,
+      201,
+      192
+    ]
+  },
+  "Battle_TurnCharact_TurnDuo": {
+    "recognition": "OCR",
+    "next": [
+      "Battle_TurnCharact_BattleStart"
+    ],
+    "focus": "BTM.次数=2次",
+    "roi": [
+      643,
+      530,
+      147,
+      38
+    ],
+    "expected": [
+      "12"
+    ]
+  },
+  "Battle_TurnCharact_TurnDuo_Int": {
+    "action": "Click",
+    "post_delay": 500,
+    "focus": "BTM.刷取次数调整",
+    "target": [
+      848,
+      451,
+      0,
+      0
+    ]
+  },
+  "Battle_TurnCharact_BattleStart": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "Battle_TurnCharact_FastBattleReward"
+    ],
+    "on_error": [
+      "Battle_CollectMapInitializeE"
+    ],
+    "post_delay": 5000,
+    "focus": "BTM.快速狩猎-启动！",
+    "roi": [
+      643,
+      532,
+      96,
+      31
+    ],
+    "expected": [
+      "狩猎"
+    ]
+  },
+  "Battle_TurnCharact_FastBattleReward": {
+    "recognition": "OCR",
+    "action": "Click",
+    "next": [
+      "Battle_TurnCharact"
+    ],
+    "post_delay": 3000,
+    "focus": "BTM.结算-战利品页面返回",
+    "roi": [
+      551,
+      623,
+      168,
+      51
+    ],
+    "expected": [
+      "点击画面即可返回"
+    ],
+    "doc": "狩猎Reward"
+  },
+  "Battle_TurnCharact": {
+    "recognition": "ColorMatch",
+    "action": "Click",
+    "post_delay": 1000,
+    "focus": "BTM.调整属性",
+    "roi": [
+      176,
+      92,
+      133,
+      285
+    ],
+    "count": 25,
+    "lower": [
+      [
+        255,
+        255,
+        255
+      ]
+    ],
+    "upper": [
+      [
+        255,
+        255,
+        255
+      ]
+    ],
+    "target_offset": [
+      0,
+      58,
+      0,
+      0
+    ]
+  },
+  "Battle_TurnCharact_CollectMapInitializeE": {
+    "action": "Click",
+    "next": [
+      "Battle_BackHomePage"
+    ],
+    "post_delay": 3000,
+    "focus": "BTBM.AP-异常（点击地图默认位置按钮）",
+    "target": [
+      140,
+      120,
+      0,
+      0
+    ]
+  },
+  "Battle_TurnCharact_End": {
+    "recognition": "TemplateMatch",
+    "next": [
+      "Battle_FastBattleMAXTouchDongXue"
+    ],
+    "interrupt": [
+      "Battle_QuickBattleButton"
+    ],
+    "focus": "BTM.退出BTM分支。BM.准备刷最后一项",
+    "roi": [
+      419,
+      606,
+      95,
+      88
+    ],
+    "template": [
+      "CharactDurk.png"
+    ]
+  },
+  "Battle_CollectMap_SwipLeft": {
+    "action": "Swipe",
+    "post_delay": 3000,
+    "focus": "BM.史贝伦大陆西北",
+    "begin": [
+      270,
+      194,
+      0,
+      0
+    ],
+    "end": [
+      682,
+      350,
+      0,
+      0
+    ],
+    "duration": 500
   }
 }
